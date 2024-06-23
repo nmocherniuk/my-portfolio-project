@@ -2,5 +2,4 @@
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     column-gap: 50px;
-    font-size: 15px;
 }

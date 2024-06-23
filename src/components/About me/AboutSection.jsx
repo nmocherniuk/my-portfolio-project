@@ -15,7 +15,7 @@ const AboutSection = () => {
                 <div className={classes["article-container"]}>
                     <PersonalSummary />
                     <Skills />
-            
+                    {/* <Certificates /> */}
                 </div>
             </Container>
         </FullpageSection>
