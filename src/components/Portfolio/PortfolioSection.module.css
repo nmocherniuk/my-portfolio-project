@@ -1,0 +1,35 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.laptop {
+    width: 603px;
+    height: 401px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+ 
+}
+
+.project-description {
+    margin-bottom: 25px;
+}
+
+.button {
+    color: var(--white-color);
+    width: 253px;
+    height: 59px;
+    border: 2px solid #C22085;
+    background: transparent;
+}

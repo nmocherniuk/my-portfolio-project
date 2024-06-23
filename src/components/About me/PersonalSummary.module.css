@@ -1,0 +1,26 @@
+.introduction {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.info-about-me {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.info-about-me > p {
+    font-size: 19px;
+    font-weight: 200;;
+}
+
+.custom-button {
+    background-color: transparent;
+    width: 100%;
+    height: 42px;
+    color: var(--white-color);
+    border: 2px solid transparent;
+    background: linear-gradient(#0C0C0C, #0C0C0C) padding-box,
+        linear-gradient(to right, #99A550 30%, #2D9687 60%) border-box;
+}

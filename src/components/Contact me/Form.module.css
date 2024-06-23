@@ -1,0 +1,54 @@
+.form-container {
+    width: 100%;
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 13px;
+    border: 3px solid #AE1E78;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 63px;
+    background: transparent;
+}
+
+.form-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-input > label {
+    font-size: 20px;
+}
+
+.form-input > input, .form-input > textarea {
+    background-color: #282828;
+    border: none;
+    border-radius: 5px;
+    padding: 13px;
+}
+
+.form-input > textarea {
+    font-family: "Poppins", "Roboto Slab", serif;
+    resize: none; 
+}
+
+.form-image {
+    border: 3px solid #AE1E78;
+    border-right: none;
+}
+
+.button {
+    height: 48px;
+    width: 260px;
+    border: none;
+    border-radius: 5px;
+    background-color: #AE1E78;
+    color: white;
+    margin-top: 20px;
+}

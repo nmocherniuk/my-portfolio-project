@@ -1,0 +1,18 @@
+.certificates-article {
+    grid-column: 2 / 2;
+    grid-row: 2 / 3;
+}
+
+.certificates {
+    display: flex;
+    font-size: 12px;
+    gap: 12px;
+}
+
+.certificate {
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 11px;
+}

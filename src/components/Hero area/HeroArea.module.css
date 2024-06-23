@@ -1,0 +1,37 @@
+.area {
+    height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1200px; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.hero-content > div:nth-of-type(1){
+    font-size: 45px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 14px;
+    margin: 20px 0px;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+}
+
+.button {
+    background-color: transparent;
+    color: #AE1E78;
+    border: none;
+    border: 2px solid #AE1E78;
+    padding: 14.5px 50px;
+}
