@@ -7,12 +7,12 @@ import twitterIcon from "../../assets/social-icons/pink-icons/twitter-icon.svg";
 import gitHubIcon from "../../assets/social-icons/pink-icons/github-icon.svg";
 import teregramIcon from "../../assets/social-icons/pink-icons/telegram-icon.svg";
 import Button from "../../UI/Button.jsx";
-
+import { FullpageSection } from "@ap.cx/react-fullpage";
 const HeroArea = () => {
-    return (
-        <Fragment>
+    return (  <Light color="purple">
+        <FullpageSection>
             <div className={classes.area} id="hero">
-                <Light color="purple">
+              
                     <div className={classes.container}>
                         <div className={classes["hero-content"]}>
                             <div>
@@ -37,11 +37,12 @@ const HeroArea = () => {
 
                         </div>
                     </div>
-                </Light>
+                
             </div>
 
 
-        </Fragment>
+        </FullpageSection>
+        </Light>
     );
 };
 

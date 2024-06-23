@@ -5,17 +5,19 @@ import AboutSection from "./components/About me/AboutSection";
 import PortfolioSection from "./components/Portfolio/PortfolioSection";
 import ContactSection from "./components/Contact me/ContactSection";
 import Footer from "./components/Footer/Footer";
-
+import FullPageScroll from "./UI/FullPageScroll";
 
 const App = () => {
     return (
         <Fragment>
-            <Header/>
-            <HeroArea/>
-            <AboutSection/>
-            <PortfolioSection/>
-            <ContactSection/>
-            <Footer/>
+            <Header />
+            <FullPageScroll>
+                <HeroArea />
+                <AboutSection />
+          
+                <ContactSection />
+            </FullPageScroll>
+            <Footer />
         </Fragment>
     )
 }

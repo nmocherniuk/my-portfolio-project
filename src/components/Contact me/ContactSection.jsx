@@ -1,11 +1,11 @@
 import React from "react";
 import Container from "../../UI/Container";
 import Form from "./Form";
-
+import { FullpageSection } from "@ap.cx/react-fullpage";
 
 const ContactSection = () => {
     return (
-        <section>
+        <FullpageSection>
             <Container>
                 <h2>Contact with me</h2>
                 <p className="section-description">Get in touch or shoot me an email directly on <span className='bold'>nazar.mocherniuk@gmail.com</span>.
@@ -13,7 +13,7 @@ const ContactSection = () => {
                 <Form/>
 
             </Container>
-        </section>
+        </FullpageSection>
     );
 };
 

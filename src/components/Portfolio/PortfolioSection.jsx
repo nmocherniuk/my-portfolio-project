@@ -3,11 +3,11 @@ import Container from "../../UI/Container";
 import classes from "./PortfolioSection.module.css";
 import laptopImg from "../../assets/laptop.png";
 import Button from "../../UI/Button";
-
+import { FullpageSection } from "@ap.cx/react-fullpage";
 const PortfolioSection = () => {
     return (
       
-        <section>
+        <FullpageSection>
               <Container>
            
                 <h2>Portfolio</h2>
@@ -49,7 +49,7 @@ const PortfolioSection = () => {
                 </article>
             </div>
             </Container>
-        </section>
+        </FullpageSection>
      
     );
 };
