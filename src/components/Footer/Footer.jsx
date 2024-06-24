@@ -7,9 +7,11 @@ import twitterIcon from "../../assets/social-icons/white-icons/twitter-icon.svg"
 import gitHubIcon from "../../assets/social-icons/white-icons/github-icon.svg";
 import teregramIcon from "../../assets/social-icons/white-icons/telegram-icon.svg";
 import Button from "../../UI/Button.jsx";
-
+import { FullpageSection } from "@ap.cx/react-fullpage";
 const Footer = () => {
+  
   return (
+    <FullpageSection>
     <footer className={classes.footer}>
       <div className={classes.container}>
         <div className={classes["footer-profile"]}>
@@ -36,6 +38,7 @@ const Footer = () => {
       </div>
       <span className={classes["footer-copyright"]}>Copyright 2024. Mady by Nazar Mocherniuk</span>
     </footer>
+    </FullpageSection>
   );
 };
 

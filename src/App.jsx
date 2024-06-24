@@ -14,10 +14,11 @@ const App = () => {
             <FullPageScroll>
                 <HeroArea />
                 <AboutSection />
-          
+                <PortfolioSection/>
                 <ContactSection />
+                <Footer />
             </FullPageScroll>
-            <Footer />
+            
         </Fragment>
     )
 }

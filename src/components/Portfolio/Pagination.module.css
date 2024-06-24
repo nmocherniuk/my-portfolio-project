@@ -1,0 +1,10 @@
+.pagination {
+    height: 54px;
+    width: 54px;
+    background-color: #1F1F1F;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}

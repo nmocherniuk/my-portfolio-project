@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    gap: 18px;
+    margin-top: 70px;
+}
+
+.container > div:first-child {
+    border: 1.4px solid #A7BF17;
+}

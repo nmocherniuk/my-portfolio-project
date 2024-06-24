@@ -1,0 +1,42 @@
+
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    animation: flicker 4s infinite alternate;
+  }
+  
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .purple {
+    background: linear-gradient(to bottom, #ae1e7755, transparent);
+  }
+  
+  .green {
+    background: linear-gradient(to bottom, #2d968646, transparent);
+  }
+  
+  .yellow {
+    background: linear-gradient(to bottom, #e5df8e33, transparent);
+  }
+  
+  .turquoise {
+    background: linear-gradient(to bottom, #1DA9A678, transparent);
+  }
+  

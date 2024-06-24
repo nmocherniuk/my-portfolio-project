@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Light from "./Light.jsx";
+import Light from "../../UI/Light.jsx";
 import classes from "./HeroArea.module.css";
 import instagramIcon from "../../assets/social-icons/pink-icons/instagram-icon.svg";
 import linkedInIcon from "../../assets/social-icons/pink-icons/linkedIn-icon.svg";
@@ -9,10 +9,10 @@ import teregramIcon from "../../assets/social-icons/pink-icons/telegram-icon.svg
 import Button from "../../UI/Button.jsx";
 import { FullpageSection } from "@ap.cx/react-fullpage";
 const HeroArea = () => {
-    return (  <Light color="purple">
+    return (  
         <FullpageSection>
             <div className={classes.area} id="hero">
-              
+            <Light color="purple"/>
                     <div className={classes.container}>
                         <div className={classes["hero-content"]}>
                             <div>
@@ -42,7 +42,7 @@ const HeroArea = () => {
 
 
         </FullpageSection>
-        </Light>
+
     );
 };
 

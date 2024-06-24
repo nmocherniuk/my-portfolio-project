@@ -1,0 +1,35 @@
+.project {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.laptop {
+    width: 603px;
+    height: 401px;
+}
+
+.project-title {
+    border: none;
+    font-size: 38px;
+    font-weight: 500;
+    color: #E9B171;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.project-description {
+    margin-bottom: 25px;
+}
+
+.button {
+    color: var(--white-color);
+    width: 253px;
+    height: 59px;
+    border: 2px solid #C22085;
+    background: transparent;
+}
