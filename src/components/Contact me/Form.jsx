@@ -6,8 +6,6 @@ import Button from "../../UI/Button";
 const Form = () => {
     return (
         <Fragment>
-            <div className={classes["form-container"]}>
-            <img className={classes["form-image"]} src={formImg} alt="Form image" />
             <form className={classes.form}>
                 <div className={classes["form-input"]}>
                     <label htmlFor="name">Name</label>
@@ -23,8 +21,6 @@ const Form = () => {
                 </div>
             <Button classesButton={classes.button}>Submit</Button>
             </form>
-            </div>
- 
         </Fragment>
     );
 };

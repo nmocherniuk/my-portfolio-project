@@ -8,6 +8,7 @@ import gitHubIcon from "../../assets/social-icons/pink-icons/github-icon.svg";
 import teregramIcon from "../../assets/social-icons/pink-icons/telegram-icon.svg";
 import Button from "../../UI/Button.jsx";
 import { FullpageSection } from "@ap.cx/react-fullpage";
+
 const HeroArea = () => {
     return (  
         <FullpageSection>

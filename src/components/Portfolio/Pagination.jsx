@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import classes from "./Pagination.module.css";
 
 
-function Pagination({number}) {
+function Pagination({number, paginate, isActive}) {
+
+
+
   return (
-    <div className={classes.pagination}>
+    <li className={`${classes.pagination} ${isActive ? classes.active : ''}`} onClick={() => paginate(number)}>
       {number}
-    </div>
+    </li>
   )
 }
 

@@ -31,6 +31,9 @@ code {
 
 section {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -67,10 +70,10 @@ p {
 .section-description {
   display: block;
   width: 800px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 200;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 75px;
 }
 
 button {

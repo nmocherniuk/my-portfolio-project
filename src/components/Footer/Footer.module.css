@@ -1,7 +1,6 @@
 .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    margin: 0 auto;
+    align-self: end;
 }
 
 .container {

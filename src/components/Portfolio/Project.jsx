@@ -4,16 +4,16 @@ import classes from "./Project.module.css";
 import Button from "../../UI/Button";
 import { FullpageSection } from "@ap.cx/react-fullpage"
 
-function Project({ projectTitle, projectDescription }) {
+function Project({ title, description }) {
   return (
-    <article className={classes.project}>
+    <li className={classes.project}>
       <img className={classes.laptop} src={laptopImg} alt="Laptop" />
       <div className={classes["project-info"]}>
-        <h3 className={classes["project-title"]}>{projectTitle}te</h3>
-        <p className={classes["project-description"]}>{projectDescription}</p>
+        <h3 className={classes["project-title"]}>{title}te</h3>
+        <p className={classes["project-description"]}>{description}</p>
         <Button classesButton={classes.button}>See the details</Button>
       </div>
-    </article>
+    </li>
   );
 }
 
