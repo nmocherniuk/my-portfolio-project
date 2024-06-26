@@ -21,7 +21,7 @@ const HeroArea = () => {
                                 <h1>I'm Nazar Mocherniuk</h1>
                                 And I'm a <span>Front-End Developer.</span>
                             </div>
-                            <p>
+                            <p className={classes["hero-text"]}>
                                 A dedicated React Developer crafting dynamic web solutions.<br />
                                 I specialize in turning design blueprints into responsive,<br />
                                 high-performance web applications with React.js.

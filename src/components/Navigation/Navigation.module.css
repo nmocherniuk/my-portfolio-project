@@ -1,0 +1,68 @@
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .navigation {
+    height: 100vh;
+  }
+  
+  .navigation > div {
+    align-items: flex-start;
+  }
+  
+  .nav-container {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    font-size: 64px;
+  }
+  
+  .nav-container > li {
+    position: relative;
+    padding: 0px 20px; /* Add padding for space inside the rectangle */
+    transition: background 1s ease-in-out; /* Smooth transition for background color */
+  }
+  
+  .nav-container > li:hover {
+    cursor: pointer;
+
+  }
+  
+  .nav-container > li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    transition: width 0.6s ease-in-out; /* Smooth transition for the width */
+    z-index: -1; /* Ensure it is behind the text */
+  }
+
+  .nav-container > li:nth-of-type(1)::before {
+    background-color: rgb(176, 1, 106); /* Example rectangle color */
+  }
+  
+  .nav-container > li:nth-of-type(2)::before {
+    background-color: rgb(0, 128, 129); /* Example rectangle color */
+  }
+  
+  .nav-container > li:nth-of-type(3)::before {
+    background-color: rgb(37, 49, 117); /* Example rectangle color */
+  }
+  
+  .nav-container > li:nth-of-type(4)::before {
+    background-color: rgb(248, 83, 86); /* Example rectangle color */
+  }
+  
+  .nav-container > li:hover::before {
+    width: 100%;
+  }

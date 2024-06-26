@@ -1,3 +1,4 @@
+
 .area {
     display: flex;
     justify-content: center;
@@ -19,10 +20,14 @@
     font-size: 45px;
 }
 
+.hero-text {
+    margin: 15px 0px;
+}
+
 .social-icons {
     display: flex;
     gap: 14px;
-    margin: 20px 0px;
+    margin: 25px 0px;
 }
 
 .photo {

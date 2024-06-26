@@ -6,12 +6,15 @@ import PortfolioSection from "./components/Portfolio/PortfolioSection";
 import ContactSection from "./components/Contact me/ContactSection";
 import Footer from "./components/Footer/Footer";
 import FullPageScroll from "./UI/FullPageScroll";
+import Navigation from "./components/Navigation/Navigation";
+
 
 const App = () => {
     return (
         <Fragment>
             <Header />
             <FullPageScroll>
+                <Navigation/>
                 <HeroArea />
                 <AboutSection />
                 <PortfolioSection/>
