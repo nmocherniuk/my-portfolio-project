@@ -42,13 +42,14 @@
     background: linear-gradient(to bottom, transparent, rgba(139, 0, 139, 0.4), rgba(207, 97, 207, 0.8), rgba(139, 0, 139, 0.6), rgba(139, 0, 139, 0.4), transparent);
 } 
    */
-  .turquoise {
-    background: linear-gradient(to bottom, #F85356, transparent);
-  }
-  .turquoise {
-    background: linear-gradient(to bottom, transparent, rgba(248, 83, 86, 0.4), rgba(248, 83, 86, 0.8), rgba(248, 83, 86, 0.6), rgba(248, 83, 86, 0.4), transparent);
-}
+ 
 
+    .turquoise {
+      background: linear-gradient(to bottom, transparent, rgba(248, 83, 86, 0.2), rgba(248, 83, 86, 0.5), rgba(248, 83, 86, 0.3), rgba(248, 83, 86, 0.2), transparent);
+    }
+    .turquoise {
+      background: linear-gradient(to bottom, transparent, rgba(118, 21, 83, 0.2), rgba(118, 21, 83, 0.8), rgba(118, 21, 83, 0.6), rgba(118, 21, 83, 0.4), transparent);
+    }
   /* .turquoise {
     background: linear-gradient(to bottom, transparent, rgba(223, 72, 82, 0.4), rgba(223, 72, 82, 0.8), rgba(223, 72, 82, 0.6), rgba(223, 72, 82, 0.4), transparent);
 }
