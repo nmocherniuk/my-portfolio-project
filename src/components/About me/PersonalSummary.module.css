@@ -25,4 +25,5 @@
     background: linear-gradient(#0C0C0C, #0C0C0C) padding-box,
         linear-gradient(to right, #99A550 30%, #2D9687 60%) border-box;
     font-size: 18px;
+    cursor: pointer;
 }

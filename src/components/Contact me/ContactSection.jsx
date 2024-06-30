@@ -13,7 +13,6 @@ const ContactSection = () => {
                 <p className="section-description">Get in touch or shoot me an email directly on <span className='bold'>nazar.mocherniuk@gmail.com</span>.
                     I will get back to you as soon as possible</p>
                 <Form />
-
             </Container>
         </FullpageSection>
     );

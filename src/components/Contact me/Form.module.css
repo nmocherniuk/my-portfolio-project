@@ -16,6 +16,7 @@
     background: #121212;
     border: 3px solid #A60A40;
     border-left: none;
+    
 }
 
 .form-input {
@@ -30,11 +31,12 @@
 }
 
 .form-input > input, .form-input > textarea {
-   
+    color: var(--white-color);
     background-color: rgba(32, 28, 32, 0.8);
     border: none;
     border-radius: 5px;
     padding: 13px;
+    outline: none;
 }
 
 .form-input > textarea {
@@ -60,4 +62,31 @@
     margin-top: 20px;
     align-self: flex-end;
     font-size: 17px;
+    cursor: pointer;
 }
+
+.response-form {
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center;
+} 
+
+/* .burger.burger-3::before,
+.burger.burger-3::after {
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+}
+
+.burger.burger-3.is-closed::before,
+.burger.burger-3.is-closed::after {
+  width: 20px;
+}
+
+.burger.burger-3.is-closed::before {
+  transform: rotate(-45deg) translate(-4px, -2px);
+}
+
+.burger.burger-3.is-closed::after {
+  transform: rotate(45deg) translate(-4px, 2px);
+}
+ */

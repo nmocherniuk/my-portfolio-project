@@ -9,6 +9,10 @@
     border-radius: 12px;
 }
 
+.pagination:hover {
+    cursor: pointer;
+}
+
 .active {
     border: 1.4px solid #A7BF17;
 }

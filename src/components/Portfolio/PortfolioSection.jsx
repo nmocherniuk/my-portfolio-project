@@ -52,7 +52,7 @@ const PortfolioSection = () => {
 
     const paginate = (pageNumber) => setCurrentProject(pageNumber)
   return (
-    <FullpageSection>
+    <FullpageSection id="portfolio">
       <Fragment>
         <Light color="yellow" />
         <Container>

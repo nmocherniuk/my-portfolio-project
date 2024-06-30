@@ -33,11 +33,12 @@
 .photo {
     width: 200px;
     height: 200px;
-    background-color: rgb(85, 87, 87);
+    background-color: transparent;
 }
 
 .button {
     background-color: transparent;
+    cursor: pointer;
     color: #AE1E78;
     border: none;
     border: 2px solid #AE1E78;

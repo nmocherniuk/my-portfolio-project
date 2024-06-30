@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const navigationSlice = createSlice({
-  name: 'navigation',
+  name: 'navigation-overlay',
   initialState,
   reducers: {
     openMenu: (state) => {

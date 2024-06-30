@@ -33,7 +33,6 @@
   
   .nav-container > li:hover {
     cursor: pointer;
-
   }
   
   .nav-container > li::before {

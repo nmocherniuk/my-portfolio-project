@@ -9,9 +9,9 @@ import Light from "../../UI/Light.jsx";
 
 const AboutSection = () => {
   return (
-    <FullpageSection>
+    <FullpageSection id="about">
       <Fragment>
-        <Light color="green"> </Light>
+        <Light color="green"/> 
         <Container>
           <h2>About me</h2>
           <p className="section-description">
