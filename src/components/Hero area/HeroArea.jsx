@@ -26,7 +26,7 @@ const HeroArea = () => {
     });
 
     return (  
-        <FullpageSection id="hero">
+        <FullpageSection id="hero" style={{ height: '100vh'}}>
             <div className={classes.area}>
             <Light color="purple"/>
                     <div className={classes.container}>

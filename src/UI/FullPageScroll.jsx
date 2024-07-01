@@ -1,13 +1,16 @@
-import React from 'react'
-import {Fullpage,  FullPageSections} from '@ap.cx/react-fullpage'
-function FullPageScroll({children}) {
+import React, { useRef, useEffect } from 'react';
+import { Fullpage, FullPageSections, FullpageSection, FullpageNavigation } from '@ap.cx/react-fullpage';
+
+const FullPageScroll = ({ children }) => {
+
   return (
     <Fullpage>
-        <FullPageSections>
-            {children}
-        </FullPageSections>
+      <FullpageNavigation />
+      <FullPageSections >
+        {children}
+      </FullPageSections>
     </Fullpage>
-  )
-}
+  );
+};
 
-export default FullPageScroll
+export default FullPageScroll;

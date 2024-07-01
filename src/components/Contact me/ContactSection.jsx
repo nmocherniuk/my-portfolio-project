@@ -6,8 +6,8 @@ import Light from "../../UI/Light";
 
 const ContactSection = () => {
     return (
-        <FullpageSection>
-            <Light color="turquoise" />
+        <FullpageSection  style={{ height: '100vh'}}>
+            <Light color="turquoise" style={{ height: '100vh'}}/>
             <Container>
                 <h2>Contact with me</h2>
                 <p className="section-description">Get in touch or shoot me an email directly on <span className='bold'>nazar.mocherniuk@gmail.com</span>.

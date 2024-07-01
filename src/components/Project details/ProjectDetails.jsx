@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import laptop from "../../assets/laptop.png";
 import iPad from "../../assets/iPad-pro.png";
 import iphone from "../../assets/iphone.png";
@@ -8,9 +8,11 @@ import Container from '../../UI/Container';
 import { FullpageSection } from "@ap.cx/react-fullpage";
 
 function ProjectDetails() {
+
+
     return (
         <Fragment>
-            <FullpageSection>
+            <FullpageSection style={{ height: '100vh'}} >
                 <Container>
                     <h3 className={classes["project-title"]}>Title the website</h3>
                     <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -23,7 +25,7 @@ function ProjectDetails() {
                     </div>
                 </Container>
             </FullpageSection>
-            <FullpageSection>
+            <FullpageSection style={{ height: '100vh'}}>
                 <Container>
                     <div className={classes["details-container"]}>
                         <div className={classes["about-project"]}>
@@ -55,45 +57,6 @@ function ProjectDetails() {
                     </div>
                     <Button>Back to home Page</Button>
                     <span>Copyright 2024. Made by Nazar Mocherniuk</span>
-                </Container>
-            </FullpageSection>
-            <FullpageSection>
-                <Container>
-                    <h3 className={classes["project-title"]}>Title the website</h3>
-                    <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud </p>
-                    <div>
-                        <img src={iPad} alt="IPad" />
-                        <img className={classes.laptop} src={laptop} alt="Laptop" />
-                        <img src={iphone} alt="Iphone" />
-                    </div>
-                </Container>
-            </FullpageSection>
-            <FullpageSection>
-                <Container>
-                    <h3 className={classes["project-title"]}>Title the website</h3>
-                    <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud </p>
-                    <div>
-                        <img src={iPad} alt="IPad" />
-                        <img className={classes.laptop} src={laptop} alt="Laptop" />
-                        <img src={iphone} alt="Iphone" />
-                    </div>
-                </Container>
-            </FullpageSection>
-            <FullpageSection>
-                <Container>
-                    <h3 className={classes["project-title"]}>Title the website</h3>
-                    <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud </p>
-                    <div>
-                        <img src={iPad} alt="IPad" />
-                        <img className={classes.laptop} src={laptop} alt="Laptop" />
-                        <img src={iphone} alt="Iphone" />
-                    </div>
                 </Container>
             </FullpageSection>
         </Fragment>

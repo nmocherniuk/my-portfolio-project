@@ -9,7 +9,7 @@ import Light from "../../UI/Light.jsx";
 
 const AboutSection = () => {
   return (
-    <FullpageSection id="about">
+    <FullpageSection id="about" style={{ height: '100vh'}}>
       <Fragment>
         <Light color="green"/> 
         <Container>

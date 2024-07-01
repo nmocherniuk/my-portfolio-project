@@ -11,7 +11,7 @@ import { FullpageSection } from "@ap.cx/react-fullpage";
 const Footer = () => {
   
   return (
-    <FullpageSection>
+    <FullpageSection style={{ height: '80vh'}}>
     <footer className={classes.footer}>
       <div className={classes.container}>
         <div className={classes["footer-profile"]}>

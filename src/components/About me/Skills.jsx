@@ -10,7 +10,7 @@ const Skills = () => {
             <h3>My Skills</h3>
             <div className={classes.skills}>
                 {SKILLS_DATA.map( skill => (
-                    <Skill imgSrc={skill.imgSrc}>{skill.title}</Skill>
+                    <Skill key={skill.title} imgSrc={skill.imgSrc}>{skill.title}</Skill>
                 )) }
             </div>
         </article>
