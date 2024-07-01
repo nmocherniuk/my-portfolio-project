@@ -30,7 +30,7 @@ const App = () => {
     return (
         <Fragment>
             <Header />
-            <ProjectDetails/>
+            {/* <ProjectDetails/> */}
             {overlay && <Navigation />}
             <FullPageScroll>
                 <HeroArea />
