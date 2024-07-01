@@ -1,0 +1,11 @@
+.project-title {
+    border: none;
+    font-size: 45px;
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
