@@ -1,12 +1,12 @@
-import React, { useRef, useEffect } from 'react';
-import { Fullpage, FullPageSections, FullpageSection, FullpageNavigation } from '@ap.cx/react-fullpage';
+import React, { useRef, useEffect, useState } from 'react';
+import { Fullpage, FullPageSections, FullpageNavigation } from '@ap.cx/react-fullpage';
 
 const FullPageScroll = ({ children }) => {
 
   return (
     <Fullpage>
       <FullpageNavigation />
-      <FullPageSections >
+      <FullPageSections>
         {children}
       </FullPageSections>
     </Fullpage>

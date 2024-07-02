@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/Root";
@@ -11,6 +11,9 @@ import ContactSection from "./components/Contact me/ContactSection";
 import Footer from "./components/Footer/Footer";
 import ProjectDetails from "./components/Project details/ProjectDetails";
 
+
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -19,18 +22,21 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <FullPageScroll>
+          <Suspense>
+   <FullPageScroll>
             <HeroArea />
             <AboutSection />
             <PortfolioSection />
             <ContactSection />
             <Footer />
           </FullPageScroll>
+          </Suspense>
+       
         ),
       },
       {
         path: 'portfolio/details',
-        element: <NestedFullPageScroll><ProjectDetails /></NestedFullPageScroll>,
+        element: <Suspense><NestedFullPageScroll><ProjectDetails /></NestedFullPageScroll></Suspense> ,
       },
     ],
   },
