@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef } from 'react';
-import laptop from "../../assets/laptop.png";
+import laptop from "../../assets/laptop_big.png";
 import iPad from "../../assets/iPad-pro.png";
 import iphone from "../../assets/iphone.png";
 import Button from '../../UI/Button';
@@ -18,10 +18,10 @@ function ProjectDetails() {
                     <p className="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud </p>
-                    <div>
-                        <img src={iPad} alt="IPad" />
+                    <div className={classes.devises}>
+                        <img className={classes.ipad} src={iPad} alt="IPad" />
                         <img className={classes.laptop} src={laptop} alt="Laptop" />
-                        <img src={iphone} alt="Iphone" />
+                        <img className={classes.iphone} src={iphone} alt="Iphone" />
                     </div>
                 </Container>
             </FullpageSection>

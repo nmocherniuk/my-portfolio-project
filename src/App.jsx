@@ -22,21 +22,19 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense>
-   <FullPageScroll>
+          <FullPageScroll>
             <HeroArea />
             <AboutSection />
             <PortfolioSection />
             <ContactSection />
             <Footer />
           </FullPageScroll>
-          </Suspense>
-       
+
         ),
       },
       {
         path: 'portfolio/details',
-        element: <Suspense><NestedFullPageScroll><ProjectDetails /></NestedFullPageScroll></Suspense> ,
+        element: <Suspense><NestedFullPageScroll><ProjectDetails /></NestedFullPageScroll></Suspense>,
       },
     ],
   },

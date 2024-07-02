@@ -30,12 +30,7 @@ const HeroArea = () => {
             <div className={classes.area}>
             <Light color="purple"/>
                     <div className={classes.container}>
-                        <motion.div className={classes["hero-content"]}
-                         initial="hidden"
-                         animate="visible"
-                         transition={{ duration: 0.5, delay: 0.25 }}
-                         variants={{ hidden: { opacity: 0, y: 100 }, visible: { opacity: 1, y: 0 } }}
-                         style={{ y: yArea, scale: scaleText, opacity: opacityArea }}>
+                    <div className={classes["hero-content"]}>
                             <div>
                                 Hello,
                                 <h1>I'm Nazar Mocherniuk</h1>
@@ -53,7 +48,7 @@ const HeroArea = () => {
                                 <img src={gitHubIcon} alt="GitHub icon" />
                             </span>
                                 <Button classesButton={classes.button}>Download cv</Button>
-                        </motion.div>
+                        </div>
                         <div className={classes.photo}>
 
                         </div>
@@ -68,3 +63,28 @@ const HeroArea = () => {
 };
 
 export default HeroArea;
+
+{/* <motion.div className={classes["hero-content"]}
+initial="hidden"
+animate="visible"
+transition={{ duration: 0.5, delay: 0.25 }}
+variants={{ hidden: { opacity: 0, y: 100 }, visible: { opacity: 1, y: 0 } }}
+style={{ y: yArea, scale: scaleText, opacity: opacityArea }}>
+   <div>
+       Hello,
+       <h1>I'm Nazar Mocherniuk</h1>
+       And I'm a <span>{typeEffect}</span>
+   </div>
+   <p className={classes["hero-text"]}>
+       A dedicated React Developer crafting dynamic web solutions.<br />
+       I specialize in turning design blueprints into responsive,<br />
+       high-performance web applications with React.js.
+   </p>
+   <span className={classes["social-icons"]}>
+       <img src={instagramIcon} alt="Instagram icon" />
+       <img src={linkedInIcon} alt="LinkedIn icon" />
+       <img src={teregramIcon} alt="Telegram icon" />
+       <img src={gitHubIcon} alt="GitHub icon" />
+   </span>
+       <Button classesButton={classes.button}>Download cv</Button>
+</motion.div> */}

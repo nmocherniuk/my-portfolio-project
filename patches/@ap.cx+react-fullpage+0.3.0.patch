@@ -1,0 +1,54 @@
+diff --git a/node_modules/@ap.cx/react-fullpage/dist/index.es.js b/node_modules/@ap.cx/react-fullpage/dist/index.es.js
+index 2628663..b7ae22b 100644
+--- a/node_modules/@ap.cx/react-fullpage/dist/index.es.js
++++ b/node_modules/@ap.cx/react-fullpage/dist/index.es.js
+@@ -307,13 +307,19 @@ var Fullpage = /*#__PURE__*/function (_PureComponent) {
+       if (!this.ticking) {
+         window.requestAnimationFrame(function () {
+           // update count
+-          _this3.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+-          _this3.fullPageHeight = _this3.fullpageRef.current.clientHeight;
+-          _this3.driverRef.current.style.height = "".concat(_this3.fullPageHeight, "px");
++          _this3.viewportHeight = Math.max(document?.documentElement?.clientHeight, window.innerHeight || 0);
++          _this3.fullPageHeight = _this3.fullpageRef?.current?.clientHeight;
++      
++          if (_this3.driverRef?.current) { // Check if driverRef.current is not null
++            _this3.driverRef.current.style.height = "".concat(_this3?.fullPageHeight, "px");
++          } else {
++            console.warn("driverRef.current is null");
++          }
+           _this3.ticking = false;
+         });
+       }
+       
++
+       this.ticking = true;
+     }
+   }, {
+diff --git a/node_modules/@ap.cx/react-fullpage/dist/index.js b/node_modules/@ap.cx/react-fullpage/dist/index.js
+index c1b33d5..ccfca72 100644
+--- a/node_modules/@ap.cx/react-fullpage/dist/index.js
++++ b/node_modules/@ap.cx/react-fullpage/dist/index.js
+@@ -316,13 +316,19 @@ var Fullpage = /*#__PURE__*/function (_PureComponent) {
+       if (!this.ticking) {
+         window.requestAnimationFrame(function () {
+           // update count
+-          _this3.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+-          _this3.fullPageHeight = _this3.fullpageRef.current.clientHeight;
+-          _this3.driverRef.current.style.height = "".concat(_this3.fullPageHeight, "px");
++          _this3.viewportHeight = Math.max(document?.documentElement?.clientHeight, window.innerHeight || 0);
++          _this3.fullPageHeight = _this3.fullpageRef?.current?.clientHeight;
++      
++          if (_this3.driverRef?.current) { // Check if driverRef.current is not null
++            _this3.driverRef.current.style.height = "".concat(_this3?.fullPageHeight, "px");
++          } else {
++            console.warn("driverRef.current is null");
++          }
+           _this3.ticking = false;
+         });
+       }
+       
++
+       this.ticking = true;
+     }
+   }, {
