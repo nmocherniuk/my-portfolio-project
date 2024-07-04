@@ -7,9 +7,17 @@
 
 .details-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr;
     justify-content: space-between; /* Замініть 'space-around' на 'space-between' для тестування */
-    gap: 20px; /* Додайте gap, якщо потрібно */
+    row-gap: 20px; /* Додайте gap, якщо потрібно */
+    column-gap: 50px;
+}
+
+.details-container > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .about-project {
@@ -38,30 +46,91 @@
 }
 
 .details-container h4 {
-    font-size: 40px;
+    font-size: 35px;
     border-bottom-color: #E9B171;
+    font-weight: 600;
 }
 
-.details-container > p {
-    font-size: 20px; 
+.details-container  p {
+    font-size: 19px;
+    font-weight: 200; 
 }
 
 .about-project > p:nth-of-type(1) {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .devises {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 668px;
     position: relative;
+}
+
+.laptop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .iphone {
     position: absolute;
+    right: 120px; /* Зменште значення, щоб зсунути лівіше */
+    top: 59%;
+    transform: translateY(-50%);
+    z-index: 2;
 }
+
 
 .ipad {
     position: absolute;
+    left: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    z-index: 2;
 }
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.button {
+    background-color: transparent;
+    color: #AE1E78;
+    border: 3px solid #AE1E78;
+    font-size: 25px;
+    padding: 7px 25px;
+}
+
+.button > a {
+    color: #AE1E78;
+    background-color: transparent;
+    text-transform: none;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.footer-copyright {
+    display: block;
+    text-align: center;
+     padding: 34px 0px;
+ }
+
+ .details-container a {
+    color: #2D9687;
+    font-size: 19px;
+    text-decoration: none;
+    text-transform: none;
+ }
+
+ .details-container a:visited {
+    color: #2D9687;
+    font-style: none;
+ }
+
+ 

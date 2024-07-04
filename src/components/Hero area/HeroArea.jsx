@@ -13,11 +13,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 
 const HeroArea = () => {
-    const { scrollY } = useScroll();
-    const yArea = useTransform(scrollY, [0, 200], [0, -120]);
-    const scaleText = useTransform(scrollY, [0, 300, 500], [0.9, 1, 1.1]);
-    const opacityArea = useTransform(scrollY, [0, 200, 300, 500], [1, 0.5, 0.5, 0]);
-
     const [typeEffect] = useTypewriter({
         words: ['Front-End Developer.'],
         loop: {},
@@ -25,35 +20,40 @@ const HeroArea = () => {
         deleteSpeed: 130
     });
 
-    return (  
-        <FullpageSection id="hero" style={{ height: '100vh'}}>
+    return (
+        <FullpageSection id="home"  style={{ height: '100vh', padding: '1rem 0px' }}>
             <div className={classes.area}>
-            <Light color="purple"/>
-                    <div className={classes.container}>
-                    <div className={classes["hero-content"]}>
-                            <div>
-                                Hello,
-                                <h1>I'm Nazar Mocherniuk</h1>
-                                And I'm a <span>{typeEffect}</span>
-                            </div>
-                            <p className={classes["hero-text"]}>
-                                A dedicated React Developer crafting dynamic web solutions.<br />
-                                I specialize in turning design blueprints into responsive,<br />
-                                high-performance web applications with React.js.
-                            </p>
-                            <span className={classes["social-icons"]}>
-                                <img src={instagramIcon} alt="Instagram icon" />
-                                <img src={linkedInIcon} alt="LinkedIn icon" />
-                                <img src={teregramIcon} alt="Telegram icon" />
-                                <img src={gitHubIcon} alt="GitHub icon" />
-                            </span>
-                                <Button classesButton={classes.button}>Download cv</Button>
+                <Light color="purple" />
+                <div className={classes.container}>
+                    <motion.div className={classes["hero-content"]}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 0.5, delay: 0.25, type: "spring" }}
+                        variants={{ hidden: { opacity: 0, x: -200 }, visible: { opacity: 1, x: 0} }}
+                        >
+                        <div>
+                            Hello,
+                            <h1>I'm Nazar Mocherniuk</h1>
+                            And I'm a <span>{typeEffect}</span>
                         </div>
-                        <div className={classes.photo}>
+                        <p className={classes["hero-text"]}>
+                            A dedicated React Developer crafting dynamic web solutions.<br />
+                            I specialize in turning design blueprints into responsive,<br />
+                            high-performance web applications with React.js.
+                        </p>
+                        <span className={classes["social-icons"]}>
+                            <img src={instagramIcon} alt="Instagram icon" />
+                            <img src={linkedInIcon} alt="LinkedIn icon" />
+                            <img src={teregramIcon} alt="Telegram icon" />
+                            <img src={gitHubIcon} alt="GitHub icon" />
+                        </span>
+                        <Button classesButton={classes.button}>Download cv</Button>
+                    </motion.div>
+                    <div className={classes.photo}>
 
-                        </div>
                     </div>
-                
+                </div>
+
             </div>
 
 
@@ -64,27 +64,3 @@ const HeroArea = () => {
 
 export default HeroArea;
 
-{/* <motion.div className={classes["hero-content"]}
-initial="hidden"
-animate="visible"
-transition={{ duration: 0.5, delay: 0.25 }}
-variants={{ hidden: { opacity: 0, y: 100 }, visible: { opacity: 1, y: 0 } }}
-style={{ y: yArea, scale: scaleText, opacity: opacityArea }}>
-   <div>
-       Hello,
-       <h1>I'm Nazar Mocherniuk</h1>
-       And I'm a <span>{typeEffect}</span>
-   </div>
-   <p className={classes["hero-text"]}>
-       A dedicated React Developer crafting dynamic web solutions.<br />
-       I specialize in turning design blueprints into responsive,<br />
-       high-performance web applications with React.js.
-   </p>
-   <span className={classes["social-icons"]}>
-       <img src={instagramIcon} alt="Instagram icon" />
-       <img src={linkedInIcon} alt="LinkedIn icon" />
-       <img src={teregramIcon} alt="Telegram icon" />
-       <img src={gitHubIcon} alt="GitHub icon" />
-   </span>
-       <Button classesButton={classes.button}>Download cv</Button>
-</motion.div> */}

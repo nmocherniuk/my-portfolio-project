@@ -4,12 +4,13 @@ import quotationMark from "../../assets/quotation-mark.svg";
 import firstPhoto from "../../assets/user-faces/first-photo.png";
 import secondPhoto from "../../assets/user-faces/second-photo.png";
 import thirdPhoto from "../../assets/user-faces/third-photo.png";
+import {motion} from "framer-motion"
 
-
-const Feedbacks = () => {
+const Feedbacks = ({isInView}) => {
     return (
         <div className={classes["feedbacks-container"]}>
-            <div className={classes["feedback-item"]}>
+            <motion.div animate={{ opacity: isInView ? 1 : 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }} className={classes["feedback-item"]}>
                 <div className={classes.rectangle} />
                 <div className={classes["feedback-content"]}>
                     <img className={classes["quotation-mark"]} src={quotationMark} alt="Quotation mark" />
@@ -23,8 +24,11 @@ const Feedbacks = () => {
                         - Supervisor
                     </span>
                 </div>
-            </div>
-            <div className={classes["feedback-item"]}>
+            </motion.div>
+            <motion.div 
+            animate={{ opacity: isInView ? 1 : 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }} 
+            className={classes["feedback-item"]}>
                 <div className={classes.rectangle} />
                 <div className={classes["feedback-content"]}>
                     <img className={classes["quotation-mark"]} src={quotationMark} alt="Quotation mark" />
@@ -36,8 +40,11 @@ const Feedbacks = () => {
                         - Supervisor
                     </span>
                 </div>
-            </div>
-            <div className={classes["feedback-item"]}>
+            </motion.div>
+            <motion.div 
+            animate={{ opacity: isInView ? 1 : 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className={classes["feedback-item"]}>
                 <div className={classes.rectangle} />
                 <div className={classes["feedback-content"]}>
                     <img className={classes["quotation-mark"]} src={quotationMark} alt="Quotation mark" />
@@ -49,7 +56,7 @@ const Feedbacks = () => {
                         - Colleague
                     </span>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

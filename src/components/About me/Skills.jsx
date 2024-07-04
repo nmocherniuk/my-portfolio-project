@@ -2,18 +2,30 @@ import React from "react";
 import classes from "./Skills.module.css";
 import SKILLS_DATA from "../../data/skills-data";
 import Skill from "./Skill";
+import { motion } from "framer-motion";
 
-
-const Skills = () => {
+const Skills = ({ isInViewRef }) => {
     return (
-        <article className={classes["skills-article"]}>
+        <motion.article className={classes["skills-article"]}
+        animate={{
+            opacity: isInViewRef ? 1 : 0,
+            x: isInViewRef ? 0 : 200
+        }}
+        transition={{
+            duration: 1,
+            delay: 0.15,
+            type: "spring"
+        }}>
             <h3>My Skills</h3>
-            <div className={classes.skills}>
-                {SKILLS_DATA.map( skill => (
+            <motion.div
+         
+
+                className={classes.skills}>
+                {SKILLS_DATA.map(skill => (
                     <Skill key={skill.title} imgSrc={skill.imgSrc}>{skill.title}</Skill>
-                )) }
-            </div>
-        </article>
+                ))}
+            </motion.div>
+        </motion.article>
     );
 };
 

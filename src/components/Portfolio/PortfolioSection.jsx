@@ -1,5 +1,5 @@
-import React, { useEffect, useState, Fragment } from "react";
-
+import React, { useEffect, useState, Fragment, useRef } from "react";
+import { motion, useAnimate, useInView } from "framer-motion"
 import Container from "../../UI/Container";
 import FullPageScroll from "../../UI/FullPageScroll";
 import Button from "../../UI/Button";
@@ -34,6 +34,9 @@ const PROJECTS = [
 ];
 
 const PortfolioSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true})
+  const [rerenderAnimation, setRerenderAnimation] = useState(false)
   const [projects, setProjects] = useState([]);
   const [currentProject, setCurrentProject] = useState(1);
   const [projectPerPage, setProjectPerPage] = useState(1);
@@ -50,22 +53,33 @@ const PortfolioSection = () => {
     indexOfLastProject
   );
 
-    const paginate = (pageNumber) => setCurrentProject(pageNumber)
+  const paginate = (pageNumber) => {
+    setCurrentProject(pageNumber)
+    setRerenderAnimation(true)
+  }
   return (
-    <FullpageSection id="portfolio" style={{ height: '100vh'}}>
+    <FullpageSection style={{ height: '100vh', padding: '1rem 0px' }}>
       <Fragment>
         <Light color="yellow" />
         <Container>
-          <h2>Portfolio</h2>
-          <p className="section-description">
+          <motion.h2
+            transition={{ duration: 0.5, delay: 0.15, type: "spring" }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -100 }}
+          >Portfolio</motion.h2>
+          <motion.p animate={{ opacity: isInView ? 1 : 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="section-description" ref={ref}>
             Here you will find some of the personal and clients projects that I
             created with each project containing its own case study.
-          </p>
-            <Projects projects={currentProjects}/>
-          <PaginationContainer projectperPage={projectPerPage} totalProjects={projects.length} paginate={paginate} currentProject={currentProject}/>
+          </motion.p>
+          <Projects key={currentProject} isInViewRef={isInView} projects={currentProjects} animationRepeat={rerenderAnimation}/>
+          <PaginationContainer
+            isInViewRef={isInView}
+            projectperPage={projectPerPage} totalProjects={projects.length} paginate={paginate} currentProject={currentProject} />
         </Container>
       </Fragment>
     </FullpageSection>
+
   );
 };
 

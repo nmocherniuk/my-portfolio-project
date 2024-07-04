@@ -3,15 +3,17 @@ import classes from "./Form.module.css";
 import formImg from "../../assets/form-photo.png";
 import Button from "../../UI/Button";
 import { useForm } from '@formspree/react';
+import {motion} from "framer-motion"
 
-const Form = () => {
+const Form = ({isInViewRef}) => {
     const [state, handleSubmit] = useForm("mbjnbbve");
     if (state.succeeded) {
         return <span className={classes['response-form']}>Thank you for reaching out!</span>;
     }
     return (
         <Fragment>
-            <div className={classes["form-container"]}>
+            <motion.div className={classes["form-container"]} transition={{duration: 0.5, delay: 0.3, type: "spring"}}
+          animate={{opacity: isInViewRef ? 1 : 0, y: isInViewRef ? 0 : 100}}>
                 <img className={classes["form-image"]} src={formImg} alt="Notebook image" />
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <div className={classes["form-input"]}>
@@ -28,7 +30,7 @@ const Form = () => {
                     </div>
                     <Button classesButton={classes.button}>Submit</Button>
                 </form>
-            </div>
+            </motion.div>
         </Fragment>
     );
 };

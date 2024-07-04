@@ -15,7 +15,7 @@ import gitIcon from "../assets/skills-icons/git-icon.svg";
 const SKILLS_DATA = [
     {
         imgSrc: htmlIcon,
-        title: "HTML"
+        title: "HTML",
     },{
         imgSrc: cssIcon,
         title: "CSS"

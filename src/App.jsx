@@ -1,5 +1,5 @@
-import React, { useEffect, Suspense } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, Suspense, Fragment } from "react";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/Root";
 import FullPageScroll from "./UI/FullPageScroll";
@@ -14,6 +14,7 @@ import ProjectDetails from "./components/Project details/ProjectDetails";
 
 
 
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -23,10 +24,10 @@ const router = createBrowserRouter([
         index: true,
         element: (
           <FullPageScroll>
-            <HeroArea />
-            <AboutSection />
-            <PortfolioSection />
-            <ContactSection />
+            <HeroArea id="home" />
+            <AboutSection id="about" />
+            <PortfolioSection id="portfolio" />
+            <ContactSection id="contact" />
             <Footer />
           </FullPageScroll>
 
@@ -41,10 +42,12 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  const overlay = useSelector(state => state.navigation.isOpen);
-
-
-  return <RouterProvider router={router} />;
+  return (
+    <Fragment>
+     
+      <RouterProvider router={router} />
+    </Fragment>
+  )
 };
 
 export default App;

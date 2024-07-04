@@ -28,7 +28,15 @@ const portalElement = document.getElementById('overlay')
 
 const Overlay = ({children}) => {
     return (
-        ReactDOM.createPortal(<div className={classes.overlay}>{children}</div>, portalElement)
+        ReactDOM.createPortal(<motion.div        variants={{
+            hidden: { top: '-100%' },
+            visible: { top: 0 },
+            exit: { top: '-100%' }
+        }}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        transition={{ duration: 0.6, delay: 0.5, ease: "easeInOut"}} className={classes.overlay}> {children} </motion.div>, portalElement)
     )
 };
 

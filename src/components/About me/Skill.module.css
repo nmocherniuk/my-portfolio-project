@@ -7,9 +7,15 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: transform 0.2s ease-in-out;
 }
 
 .skill > img {
     height: 76%;
     width: 90%;
 }
+
+.skill:hover {
+    transform: scale(1.16); /* Збільшення елемента при наведенні */
+}
+
