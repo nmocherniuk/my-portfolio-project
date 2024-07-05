@@ -16,7 +16,7 @@ const Footer = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <FullpageSection style={{ height: '80vh' }}>
+    <section style={{ height: '80vh' }}>
       <footer className={classes.footer}>
         <div className={classes.container}>
           <div className={classes["footer-profile"]}>
@@ -48,7 +48,7 @@ const Footer = () => {
         <motion.span animate={{ opacity: isInView ? 1 : 0 }}
               transition={{ duration: 0.5, delay: 0.2 }} ref={ref} className={classes["footer-copyright"]}>Copyright 2024. Mady by Nazar Mocherniuk</motion.span>
       </footer>
-    </FullpageSection>
+    </section>
   );
 };
 

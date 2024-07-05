@@ -9,13 +9,15 @@ import { FullpageSection } from "@ap.cx/react-fullpage";
 import Light from '../../UI/Light';
 import { motion, useInView } from "framer-motion";
 import { Link } from 'react-router-dom';
+
+
 function ProjectDetails() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true })
 
     return (
         <Fragment>
-            <FullpageSection style={{ height: '100vh', padding: '1rem 0px' }} >
+            <section style={{ height: '100vh', padding: '1rem 0px' }} >
                 <Light color="yellow" />
                 <Container>
                     <motion.h3
@@ -38,8 +40,8 @@ function ProjectDetails() {
                         transition={{ duration: 0.6, delay: 0.35, type: "spring" }} className={classes.iphone} src={iphone} alt="Iphone" />
                     </div>
                 </Container>
-            </FullpageSection>
-            <FullpageSection style={{ height: '100vh', padding: '1rem 0px' }}>
+            </section>
+            <section style={{ height: '100vh', padding: '1rem 0px' }}>
                 <Container>
                     <div className={classes["details-container"]}>
                         <motion.div animate={{
@@ -126,7 +128,7 @@ function ProjectDetails() {
 
 
                 </Container>
-            </FullpageSection>
+            </section>
 
         </Fragment>
     )

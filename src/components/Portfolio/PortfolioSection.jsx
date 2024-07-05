@@ -58,7 +58,7 @@ const PortfolioSection = () => {
     setRerenderAnimation(true)
   }
   return (
-    <FullpageSection style={{ height: '100vh', padding: '1rem 0px' }}>
+    <section style={{ height: '100vh', padding: '1rem 0px' }}>
       <Fragment>
         <Light color="yellow" />
         <Container>
@@ -78,7 +78,7 @@ const PortfolioSection = () => {
             projectperPage={projectPerPage} totalProjects={projects.length} paginate={paginate} currentProject={currentProject} />
         </Container>
       </Fragment>
-    </FullpageSection>
+    </section>
 
   );
 };

@@ -1,9 +1,8 @@
-import React, { Fragment, Suspense } from "react";
+import React, { useEffect, Suspense, Fragment } from "react";
 import { useSelector } from "react-redux";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/Root";
 import FullPageScroll from "./UI/FullPageScroll";
-import NestedFullPageScroll from "./UI/NestedFullPageScroll";
 import HeroArea from "./components/Hero area/HeroArea";
 import AboutSection from "./components/About me/AboutSection";
 import PortfolioSection from "./components/Portfolio/PortfolioSection";
@@ -13,34 +12,44 @@ import ProjectDetails from "./components/Project details/ProjectDetails";
 import Navigation from "./components/Navigation/Navigation";
 import { AnimatePresence } from "framer-motion";
 
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: (
+          <FullPageScroll>
+            <HeroArea id="home"/>
+            <AboutSection id="about"/>
+            <PortfolioSection id="portfolio"/>
+            <ContactSection id="contact"/>
+            <Footer />
+          </FullPageScroll>
+
+        ),
+      },
+      {
+        path: 'portfolio/details',
+        element: <Suspense><FullPageScroll><ProjectDetails /></FullPageScroll></Suspense>,
+      },
+    ],
+  },
+]);
+
 const App = () => {
   const overlay = useSelector(state => state.navigation.isOpen);
+  console.log(overlay);
 
   return (
-    <Fragment>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<RootLayout />}>
-            <Route index element={
-              <FullPageScroll>
-                <HeroArea id="home" />
-                <AboutSection id="about" />
-                <PortfolioSection id="portfolio" />
-                <ContactSection id="contact" />
-                <Footer />
-              </FullPageScroll>
-            } />
-            <Route path="portfolio/details" element={
-              <Suspense>
-                <NestedFullPageScroll>
-                  <ProjectDetails />
-                </NestedFullPageScroll>
-              </Suspense>
-            } />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </Fragment>
+    <RouterProvider router={router}>
+      <AnimatePresence>
+        {overlay && <Navigation/>}
+      </AnimatePresence>
+    </RouterProvider>
   )
 };
 

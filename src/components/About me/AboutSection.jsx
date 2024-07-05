@@ -14,7 +14,7 @@ const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true })
   return (
-    <FullpageSection id="about" style={{ height: '100vh', padding: '1rem 0px'}}>
+    <section id="about" style={{ height: '100vh', padding: '1rem 0px'}}>
       <Fragment>
         <Light color="green"/> 
         <Container>
@@ -36,7 +36,7 @@ const AboutSection = () => {
           </div>
         </Container>
       </Fragment>
-    </FullpageSection>
+    </section>
   );
 };
 

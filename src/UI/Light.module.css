@@ -8,7 +8,7 @@
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    mix-blend-mode: overlay;
+    /* mix-blend-mode: overlay; */
     animation: flicker 4s infinite alternate;
   }
   

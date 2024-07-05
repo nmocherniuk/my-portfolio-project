@@ -11,7 +11,7 @@ const ContactSection = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true })
     return (
-        <FullpageSection style={{ height: '100vh', padding: '1rem 0px' }}>
+        <section style={{ height: '100vh', padding: '1rem 0px' }}>
             <Light color="turquoise" style={{ height: '100vh' }} />
             <Container>
                 <motion.h2
@@ -23,7 +23,7 @@ const ContactSection = () => {
                     I will get back to you as soon as possible</motion.p>
                 <Form isInViewRef={isInView}/>
             </Container>
-        </FullpageSection>
+        </section>
     );
 };
 
