@@ -1,44 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Navigation.module.css";
 import Container from "../../UI/Container";
 import Overlay from "../../UI/Overlay";
-import { HashLink, NavHashLink } from 'react-router-hash-link';
-import { NavLink } from "react-router-dom";
-import scrollSection from "../../utils/scrollSection";
-import { useDispatch, useSelector } from "react-redux";
-import {closeMenu } from "../../store/navigation-slice";
+import { useDispatch } from "react-redux";
+import { closeMenu } from "../../store/navigation-slice";
 
-function Navigation() {
+
+const Navigation = () => {
   const dispatch = useDispatch();
-  function navigateHandler(){
-    dispatch(closeMenu())
+
+
+  function navigateHandler(slideIndex) {
+    dispatch(closeMenu());
   }
+
   return (
     <Overlay>
       <nav className={classes.navigation}>
         <Container>
           <ul className={classes["nav-container"]}>
-            <li onClick={navigateHandler}><NavHashLink to="/">Home</NavHashLink></li>
-            <li onClick={navigateHandler}><NavHashLink to="/">About me</NavHashLink></li>
-            <li onClick={navigateHandler}><NavHashLink to="/">Portfolio</NavHashLink></li>
-            <li onClick={navigateHandler}><NavHashLink to="/">Contact me</NavHashLink></li>
+            <li onClick={() => navigateHandler(0)}>Home</li>
+            <li onClick={() => navigateHandler(1)}>About me</li>
+            <li onClick={() => navigateHandler(2)}>Portfolio</li>
+            <li onClick={() => navigateHandler(3)}>Contact me</li>
           </ul>
         </Container>
       </nav>
     </Overlay>
-
   );
 }
 
 export default Navigation;
-
-
-{/* <li><HashLink to={"#home"}>Home</HashLink></li>
-<li><HashLink to={"#about"}>About me</HashLink></li>
-<li><HashLink to={"#portfolio"}>Portfolio</HashLink></li>
-<li><HashLink to={"#contact"}>Contact me</HashLink></li> */}
-
-{/* <li>Home</li>
-<li>About me</li>
-<li>Portfolio</li>
-<li>Contact me</li> */}

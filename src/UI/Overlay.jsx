@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import classes from "./Overlay.module.css";
 import Button from "./Button";
 import { motion } from "framer-motion";
-
+import { FullpageSection, FullpageContext } from "@ap.cx/react-fullpage";
 
 // const ModalOverlay = props => {
 //     return (

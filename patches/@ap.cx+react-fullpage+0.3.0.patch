@@ -1,8 +1,89 @@
 diff --git a/node_modules/@ap.cx/react-fullpage/dist/index.es.js b/node_modules/@ap.cx/react-fullpage/dist/index.es.js
-index 2628663..b7ae22b 100644
+index 2628663..e1d7549 100644
 --- a/node_modules/@ap.cx/react-fullpage/dist/index.es.js
 +++ b/node_modules/@ap.cx/react-fullpage/dist/index.es.js
-@@ -307,13 +307,19 @@ var Fullpage = /*#__PURE__*/function (_PureComponent) {
+@@ -1,4 +1,4 @@
+-import React, { PureComponent } from 'react';
++  import React, { PureComponent } from 'react';
+ import PropTypes from 'prop-types';
+ 
+ function _arrayLikeToArray(arr, len) {
+@@ -259,46 +259,44 @@ var Fullpage = /*#__PURE__*/function (_PureComponent) {
+     }
+   }, {
+     key: "handleScroll",
+-    value: function handleScroll() {
+-      var _this2 = this;
++value: function handleScroll(event) {
+  
+-      var _this$state = this.state,
+-          resetScroll = _this$state.resetScroll,
+-          translateY = _this$state.translateY;
++  var _this2 = this;
++  var _this$state = this.state,
++      resetScroll = _this$state.resetScroll,
++      translateY = _this$state.translateY;
+ 
+-      if (this.lockScroll) {
+-        // if > top and bottom < fix scroll
++  if (this.lockScroll) {
++    window.scrollTo(0, translateY * -1);
++    return false;
++  }
++  if (!this.ticking) {
++    window.requestAnimationFrame(function () {
++      if (resetScroll) {
+         window.scrollTo(0, translateY * -1);
+-        return false;
+       }
+ 
+-      if (!this.ticking) {
+-        window.requestAnimationFrame(function () {
+-          if (resetScroll) {
+-            window.scrollTo(0, translateY * -1);
+-          }
+-
+-          var pageYOffset = window.pageYOffset || 0;
++      var pageYOffset = window.pageYOffset || 0;
+ 
+-          _this2.setState({
+-            pageYOffset: pageYOffset,
+-            resetScroll: false
+-          });
++      _this2.setState({
++        pageYOffset: pageYOffset,
++        resetScroll: false
++      });
+ 
+-          var newSlide = _this2.slides.find(function (slide) {
+-            var el = slide.el.current;
+-            return pageYOffset < el.offsetTop + el.offsetHeight * 0.5;
+-          });
++      var newSlide = _this2.slides.find(function (slide) {
++        var el = slide.el.current;
++        return pageYOffset < el.offsetTop + el.offsetHeight * 0.5;
++      });
+ 
+-          _this2["goto"](newSlide);
++      _this2["goto"](newSlide);
+ 
+-          _this2.ticking = false;
+-        });
+-      }
++      _this2.ticking = false;
++    });
++  }
+ 
+-      this.ticking = true;
+-      return true;
+-    }
++  this.ticking = true;
++  return true;
++}
+   }, {
+     key: "handleResize",
+     value: function handleResize() {
+@@ -307,13 +305,19 @@ var Fullpage = /*#__PURE__*/function (_PureComponent) {
        if (!this.ticking) {
          window.requestAnimationFrame(function () {
            // update count
@@ -20,16 +101,91 @@ index 2628663..b7ae22b 100644
            _this3.ticking = false;
          });
        }
-       
+ 
 +
        this.ticking = true;
      }
    }, {
 diff --git a/node_modules/@ap.cx/react-fullpage/dist/index.js b/node_modules/@ap.cx/react-fullpage/dist/index.js
-index c1b33d5..ccfca72 100644
+index c1b33d5..51f0b2a 100644
 --- a/node_modules/@ap.cx/react-fullpage/dist/index.js
 +++ b/node_modules/@ap.cx/react-fullpage/dist/index.js
-@@ -316,13 +316,19 @@ var Fullpage = /*#__PURE__*/function (_PureComponent) {
+@@ -268,46 +268,44 @@ var Fullpage = /*#__PURE__*/function (_PureComponent) {
+     }
+   }, {
+     key: "handleScroll",
+-    value: function handleScroll() {
+-      var _this2 = this;
++value: function handleScroll(event) {
+   
+-      var _this$state = this.state,
+-          resetScroll = _this$state.resetScroll,
+-          translateY = _this$state.translateY;
++  var _this2 = this;
++  var _this$state = this.state,
++      resetScroll = _this$state.resetScroll,
++      translateY = _this$state.translateY;
+ 
+-      if (this.lockScroll) {
+-        // if > top and bottom < fix scroll
++  if (this.lockScroll) {
++    window.scrollTo(0, translateY * -1);
++    return false;
++  }
++  if (!this.ticking) {
++    window.requestAnimationFrame(function () {
++      if (resetScroll) {
+         window.scrollTo(0, translateY * -1);
+-        return false;
+       }
+ 
+-      if (!this.ticking) {
+-        window.requestAnimationFrame(function () {
+-          if (resetScroll) {
+-            window.scrollTo(0, translateY * -1);
+-          }
+-
+-          var pageYOffset = window.pageYOffset || 0;
++      var pageYOffset = window.pageYOffset || 0;
+ 
+-          _this2.setState({
+-            pageYOffset: pageYOffset,
+-            resetScroll: false
+-          });
++      _this2.setState({
++        pageYOffset: pageYOffset,
++        resetScroll: false
++      });
+ 
+-          var newSlide = _this2.slides.find(function (slide) {
+-            var el = slide.el.current;
+-            return pageYOffset < el.offsetTop + el.offsetHeight * 0.5;
+-          });
++      var newSlide = _this2.slides.find(function (slide) {
++        var el = slide.el.current;
++        return pageYOffset < el.offsetTop + el.offsetHeight * 0.5;
++      });
+ 
+-          _this2["goto"](newSlide);
++      _this2["goto"](newSlide);
+ 
+-          _this2.ticking = false;
+-        });
+-      }
++      _this2.ticking = false;
++    });
++  }
+ 
+-      this.ticking = true;
+-      return true;
+-    }
++  this.ticking = true;
++  return true;
++}
+   }, {
+     key: "handleResize",
+     value: function handleResize() {
+@@ -316,13 +314,19 @@ var Fullpage = /*#__PURE__*/function (_PureComponent) {
        if (!this.ticking) {
          window.requestAnimationFrame(function () {
            // update count
@@ -47,7 +203,7 @@ index c1b33d5..ccfca72 100644
            _this3.ticking = false;
          });
        }
-       
+ 
 +
        this.ticking = true;
      }

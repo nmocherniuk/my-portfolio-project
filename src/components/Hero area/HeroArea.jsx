@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { useTypewriter } from 'react-simple-typewriter';
 import Light from "../../UI/Light.jsx";
 import classes from "./HeroArea.module.css";
@@ -8,9 +8,9 @@ import twitterIcon from "../../assets/social-icons/pink-icons/twitter-icon.svg";
 import gitHubIcon from "../../assets/social-icons/pink-icons/github-icon.svg";
 import teregramIcon from "../../assets/social-icons/pink-icons/telegram-icon.svg";
 import Button from "../../UI/Button.jsx";
-import { FullpageSection } from "@ap.cx/react-fullpage";
+import { FullpageSection, FullpageContext } from "@ap.cx/react-fullpage";
 import { motion, useScroll, useTransform } from 'framer-motion';
-
+import { NewContext } from "../../UI/FullPageScroll.jsx";
 
 const HeroArea = () => {
     const [typeEffect] = useTypewriter({
@@ -19,7 +19,7 @@ const HeroArea = () => {
         typeSpeed: 90,
         deleteSpeed: 130
     });
-
+   
     return (
         <FullpageSection id="home"  style={{ height: '100vh', padding: '1rem 0px' }}>
             <div className={classes.area}>
@@ -47,6 +47,13 @@ const HeroArea = () => {
                             <img src={teregramIcon} alt="Telegram icon" />
                             <img src={gitHubIcon} alt="GitHub icon" />
                         </span>
+                        <NewContext.Consumer>
+                {
+                  ctx => (
+                    <button onClick={() => ctx.goto(ctx.slides[2])}>Goto Last</button>
+                  )
+                } 
+              </NewContext.Consumer>
                         <Button classesButton={classes.button}>Download cv</Button>
                     </motion.div>
                     <div className={classes.photo}>

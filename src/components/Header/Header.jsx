@@ -7,7 +7,6 @@ import { toggleMenu, closeMenu } from "../../store/navigation-slice";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
-import { Link as ScrollLink } from 'react-scroll';
 const Header = () => {
     const [animate, setAnimate] = useState(false);
     const dispatch = useDispatch();
