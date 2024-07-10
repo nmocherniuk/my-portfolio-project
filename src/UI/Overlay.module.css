@@ -2,6 +2,25 @@
     position: fixed;
     width: 100%;
     height: 100vh;
-    z-index: 1;
-    background-color: var(--background-color);
+    z-index: 4;
+    
 }
+
+.black {
+    background: var(--background-color);
+    z-index: 9;
+  }
+  .purple {
+    background: rgba(176, 1, 105, 1);
+    z-index: 8;
+  }
+  .green {
+    background: rgba(0, 128, 129, 1);
+    z-index: 7;
+  }
+  .blue {
+    background: #E9B171;
+    z-index: 6;
+  }
+  
+  

@@ -58,7 +58,7 @@ const PortfolioSection = () => {
     setRerenderAnimation(true)
   }
   return (
-    <section style={{ height: '100vh', padding: '1rem 0px' }}>
+    <section id="portfolio" >
       <Fragment>
         <Light color="yellow" />
         <Container>

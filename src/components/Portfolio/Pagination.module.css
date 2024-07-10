@@ -14,5 +14,12 @@
 }
 
 .active {
-    border: 1.4px solid #A7BF17;
+    border: 1.6px solid #A7BF17;
 }
+@media (min-width:320px) {
+    .pagination {
+        height: 47px;
+        width: 47px;
+        font-size: 16.5px;
+    }
+  }

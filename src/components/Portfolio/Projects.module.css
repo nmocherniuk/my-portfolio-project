@@ -4,3 +4,8 @@
     gap: 80px;
 }
 
+@media (min-width:320px) {
+    .container {
+        min-width: 310px;
+    }
+  }

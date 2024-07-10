@@ -3,13 +3,13 @@
     align-self: end;
 }
 
-.container {
+/* .container {
     margin: 0 auto;
     width: 1200px; 
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-}
+} */
 
 .footer-profile > div {
     margin-bottom: 25px;
@@ -17,6 +17,7 @@
 
 .footer-profile p {
     font-size: 16px;
+
 }
 
 .social-icons {
@@ -39,9 +40,30 @@
 .button {
     font-size: 17px;
     color: var(--white-color);
-    padding: 5px 42px;
+    /* padding: 5px 42px; */
     background-color: transparent;
     border: none;
     border: 2px solid #AE1E78;
     margin-top: 15px;
+}
+
+@media (min-width:320px) {
+    .footer-copyright {
+        font-size: 12px;
+        padding: 15px 0px;
+    }
+    .footer-profile p {
+        font-size: 16.5px;
+        font-weight: 300;
+    }
+    .button {
+        font-size: 19px;
+        height: 47px;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .social-icons > img {
+        width: 45px;
+        height: 45px;
+    }
 }

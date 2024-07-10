@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import laptop from "../../assets/laptop_big.png";
-import iPad from "../../assets/iPad-pro.png";
-import iphone from "../../assets/iphone.png";
+import tablet from "../../assets/iPad-pro.png";
+import mobile from "../../assets/iphone.png";
 import Button from '../../UI/Button';
 import classes from "./ProjectDetails.module.css";
 import Container from '../../UI/Container';
@@ -9,15 +9,57 @@ import { FullpageSection } from "@ap.cx/react-fullpage";
 import Light from '../../UI/Light';
 import { motion, useInView } from "framer-motion";
 import { Link } from 'react-router-dom';
-
-
+import { HashLink } from 'react-router-hash-link';
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { useMediaQuery } from 'react-responsive';
+import { useSwipeable } from 'react-swipeable';
+import { MdSwipe } from "react-icons/md";
+import handIcon from "../../assets/hand.png"
 function ProjectDetails() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true })
+    const [currentDeviceIndex, setCurrentDeviceIndex] = useState(0);
+    const isMobile = useMediaQuery({ query: '(max-width: 481px)' });
+
+    const swipeRef = useRef(null)
+
+    const devices = [
+        {
+            imgSrc: laptop,
+            imgTitle: 'laptop'
+        }, {
+            imgSrc: tablet,
+            imgTitle: 'tablet'
+        }, {
+            imgSrc: mobile,
+            imgTitle: 'mobile'
+        }];
+
+        console.log(2222222222);
+        
+        useEffect(() => {
+            if (swipeRef.current) {
+                const element = swipeRef.current.getBoundingClientRect();
+        
+        
+                console.log(element);
+            }
+          }, []);
+
+    const switchDevice = (index) => {
+        setCurrentDeviceIndex(index);
+    };
+
+
+    const handlers = useSwipeable({
+        onSwipedRight: () => switchDevice((currentDeviceIndex - 1 + devices.length) % devices.length),
+        onSwipedLeft: () => switchDevice((currentDeviceIndex + 1) % devices.length)
+    })
+
 
     return (
         <Fragment>
-            <section style={{ height: '100vh', padding: '1rem 0px' }} >
+            <section>
                 <Light color="yellow" />
                 <Container>
                     <motion.h3
@@ -30,21 +72,34 @@ function ProjectDetails() {
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud </motion.p>
                     <div className={classes.devises}>
-                        <motion.img
-                        animate={{opacity: [0, 1], y: [200, -185]}}
-                        transition={{ duration: 0.6, delay: 0.35, type: "spring" }}
-                        className={classes.ipad} src={iPad} alt="IPad" />
-                        <motion.img  animate={{opacity: [0, 1]}}
+                        {/* <FaArrowAltCircleLeft size={'10vw'} className={classes.arrow}/> */}
+
+                        <motion.img {...handlers}
+                            
+                            animate={{ opacity: [0, 1] }}
+                            transition={{ duration: 0.6, delay: 0.35, type: "spring" }}
+                            className={classes[`${devices[currentDeviceIndex].imgTitle}`]} src={devices[currentDeviceIndex].imgSrc} alt={`${devices[currentDeviceIndex].imgTitle}`} />
+                        <motion.div   animate={{ opacity: [0, 1] }}
+                            transition={{ duration: 0.6, delay: 0.35, type: "spring" }} className={classes["swipe-hint"]} ref={swipeRef}>
+
+                            <div className={classes.swipe}>
+                                <div className={classes.path}></div>
+                                <img src={handIcon} alt="hand icon" className={classes['hand-icon']} />
+                            </div>
+                            Swipe devise
+                        </motion.div>
+                        {/* <motion.img  animate={{opacity: [0, 1]}}
                         transition={{ duration: 0.6, delay: 0.3, type: "spring" }} className={classes.laptop} src={laptop} alt="Laptop" />
-                        <motion.img  animate={{opacity: [0, 1], y: [200, -160]}}
-                        transition={{ duration: 0.6, delay: 0.35, type: "spring" }} className={classes.iphone} src={iphone} alt="Iphone" />
+                        <motion.img  animate={{opacity: [0, 1]}}
+                        transition={{ duration: 0.6, delay: 0.35, type: "spring" }} className={classes.iphone} src={iphone} alt="Iphone" /> */}
+                        {/* <FaArrowAltCircleRight size={'10vw'} color={'#333333'} className={classes.arrow}/> */}
                     </div>
                 </Container>
             </section>
-            <section style={{ height: '100vh', padding: '1rem 0px' }}>
+            <section>
                 <Container>
                     <div className={classes["details-container"]}>
-                        <motion.div animate={{
+                        <motion.div  animate={{
                             opacity: isInView ? 1 : 0,
                             x: isInView ? 0 : -200
                         }}
@@ -53,7 +108,7 @@ function ProjectDetails() {
                                 delay: 0.15,
                                 type: "spring"
                             }} className={classes["about-project"]}>
-                            <h4>About Project</h4>
+                            <h4 >About Project</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -62,6 +117,7 @@ function ProjectDetails() {
                                 sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </motion.div>
                         <motion.div
+                         ref={ref}
                             animate={{
                                 opacity: isInView ? 1 : 0,
                                 x: isInView ? 0 : 200
@@ -72,7 +128,7 @@ function ProjectDetails() {
                                 type: "spring"
                             }}
                             className={classes["technologies-project"]}>
-                            <h4>Technologies</h4>
+                            <h4  >Technologies</h4>
                         </motion.div>
                         <motion.div animate={{
                             opacity: isInView ? 1 : 0,
@@ -117,12 +173,12 @@ function ProjectDetails() {
                             <a href="#">https://link.gg.cool.com</a>
                         </motion.div>
                     </div>
-                    <div ref={ref} className={classes.footer}>
+                    <div  className={classes.footer}>
 
-                    <motion.button animate={{ opacity: isInView ? 1 : 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }} className={classes.button}><Link to="/">Back to home Page</Link></motion.button>
+                        <motion.button animate={{ opacity: isInView ? 1 : 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }} className={classes.button}><HashLink to="/#portfolio">Back to home Page</HashLink></motion.button>
                         <motion.span animate={{ opacity: isInView ? 1 : 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }} className={classes["footer-copyright"]}>Copyright 2024. Mady by Nazar Mocherniuk</motion.span>
+                            transition={{ duration: 0.5, delay: 0.4 }} className={classes["footer-copyright"]}>Copyright 2024. Mady by Nazar Mocherniuk</motion.span>
                     </div>
 
 
@@ -135,3 +191,11 @@ function ProjectDetails() {
 }
 
 export default ProjectDetails;
+{/* <motion.img
+animate={{opacity: [0, 1], y: [200, -185]}}
+transition={{ duration: 0.6, delay: 0.35, type: "spring" }}
+className={classes.ipad} src={iPad} alt="IPad" />
+<motion.img  animate={{opacity: [0, 1]}}
+transition={{ duration: 0.6, delay: 0.3, type: "spring" }} className={classes.laptop} src={laptop} alt="Laptop" />
+<motion.img  animate={{opacity: [0, 1], y: [200, -160]}}
+transition={{ duration: 0.6, delay: 0.35, type: "spring" }} className={classes.iphone} src={iphone} alt="Iphone" /> */}

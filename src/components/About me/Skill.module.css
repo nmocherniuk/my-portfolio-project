@@ -19,3 +19,13 @@
     transform: scale(1.16); /* Збільшення елемента при наведенні */
 }
 
+@media (min-width:320px) {
+    .skill {
+        width: 65.92px;
+        height: 102.46px;
+    }
+    .skill > img {
+        height: 70%;
+        width: 100%;
+    }
+  }

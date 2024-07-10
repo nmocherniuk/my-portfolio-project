@@ -12,6 +12,7 @@
   .navigation {
     height: 100vh;
     background-color: var(--background-color);
+
   }
   
   .navigation > div {
@@ -23,11 +24,12 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
-    font-size: 64px;
+    width: 100%;
   }
   
   .nav-container > li {
     position: relative;
+    width: 100%;
     padding: 0px 20px; /* Add padding for space inside the rectangle */
     transition: background 1s ease-in-out; /* Smooth transition for background color */
   }
@@ -36,6 +38,13 @@
     cursor: pointer;
   }
   
+  .nav-container > li > a {
+    font-size: 64px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   .nav-container > li::before {
     content: '';
     position: absolute;
@@ -47,6 +56,7 @@
     z-index: -1; /* Ensure it is behind the text */
   }
 
+  
   .nav-container > li:nth-of-type(1)::before {
     background-color: rgb(176, 1, 106); /* Example rectangle color */
   }
@@ -65,4 +75,10 @@
   
   .nav-container > li:hover::before {
     width: 100%;
+  }
+
+  @media (min-width:320px) {
+    .nav-container > li > a {
+      font-size: 10vw;
+    }
   }

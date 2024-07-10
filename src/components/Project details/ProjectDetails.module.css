@@ -13,12 +13,12 @@
     column-gap: 50px;
 }
 
-.details-container > div{
+/* .details-container > div{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-}
+} */
 
 .about-project {
     grid-column: 1 / 2;
@@ -74,7 +74,7 @@
     z-index: 1;
 }
 
-.iphone {
+.mobile {
     position: absolute;
     right: 120px; /* Зменште значення, щоб зсунути лівіше */
     top: 59%;
@@ -83,7 +83,7 @@
 }
 
 
-.ipad {
+.tablet {
     position: absolute;
     left: 0;
     top: 55%;
@@ -112,7 +112,7 @@
     background-color: transparent;
     text-transform: none;
     font-size: 25px;
-    font-weight: 500;
+    /* font-weight: 500; */
 }
 
 .footer-copyright {
@@ -133,4 +133,149 @@
     font-style: none;
  }
 
- 
+.swipe-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.swipe {
+    position: relative;
+    width: 32px;
+}
+ .path {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: rgba(37, 49, 117, 0.5);
+    border-radius: 40px;
+    top: -10px;
+    left: 43px;
+    visibility: hidden;
+    animation: swipe-dot 2s 0.5s infinite;
+}
+
+.hand-icon {
+    position: relative;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 46px;
+    animation: swipe-hand 2s infinite;
+    transform-origin: 52% 62%;
+}
+
+@keyframes swipe-hand {
+    25% { transform: translate(20px) rotate(30deg); }
+    50% { transform: translate(-20px) rotate(-15deg); }
+    100% { transform: translate(0px) rotate(0); }
+}
+
+@keyframes swipe-dot {
+  12% {
+    visibility: visible;
+    width: 40px;
+  }
+  25% {
+    visibility: visible;
+    transform: translate(-65px);
+    width: 20px;
+  }
+  26% { visibility: hidden; }
+
+}
+
+
+ @media (min-width:320px) {
+    .project-title {
+        font-size: 9vw;
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .devises {
+        width: 100%;
+        position: relative;
+        height: auto;
+        display: grid;
+    }
+    .laptop, .tablet, .mobile {
+        width: 86vw;
+        justify-self: center;
+    }
+    .laptop {
+        width: 86vw;
+        position: static;
+        transform: none;
+        margin-bottom: 20px;
+    }
+    .tablet {
+        width: 48vw;
+        position: static;
+        transform: none; 
+        margin-bottom: 28.5px;
+    }
+    .mobile {
+        width: 32vw;
+        position: static;
+        transform: none;
+        margin-bottom: 21px;
+    }
+    .arrow {
+        position: absolute;
+        top: 29%;
+    }
+    .devises > svg.arrow:nth-of-type(1) {
+        left: 0;
+    }
+    .devises > svg.arrow:nth-of-type(2) {
+        right: 0;
+    }
+    .details-container {
+        grid-template-columns: none;
+    }
+    .about-project {
+        grid-row: 1 / 2;
+    }
+    .technologies-project {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .role-project {
+        grid-row: 3 / 4;
+    }
+    .website-project {
+        grid-column:  1 / 2;
+        grid-row: 4 / 5;
+    }
+    .github-project {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6 ;
+    }
+    .details-container h4 {
+        font-size: 7vw;
+      
+    }
+    .details-container  p {
+        font-size: 16.5px;
+    }
+    .details-container a {
+       display: block;
+        font-size: 16.5px;
+    }
+    .footer-copyright {
+        font-size: 12px;
+        padding: 15px 0px;
+     }
+     .button {
+        width: 100%;
+        height: 47px;
+    }
+    .button > a {
+   
+        font-size: 19px;
+        
+    }
+  }

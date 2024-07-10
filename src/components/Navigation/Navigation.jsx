@@ -8,10 +8,10 @@ import scrollSection from "../../utils/scrollSection";
 import { useDispatch, useSelector } from "react-redux";
 import {closeMenu } from "../../store/navigation-slice";
 import {FullpageContext} from "@ap.cx/react-fullpage"
-
+import { motion } from "framer-motion";
 function Navigation() {
   const dispatch = useDispatch();
-  const fullpageContext = useContext(FullpageContext);
+
   function navigateHandler(){
     dispatch(closeMenu())
   }
@@ -20,10 +20,10 @@ function Navigation() {
       <nav className={classes.navigation}>
         <Container>
           <ul className={classes["nav-container"]}>
-            <li onClick={navigateHandler}><HashLink to="/#home">Home</HashLink></li>
-            <li onClick={navigateHandler}><HashLink to="/#about">About me</HashLink></li>
-            <li onClick={navigateHandler}><HashLink to="/#portfolio">Portfolio</HashLink></li>
-            <li onClick={navigateHandler}><HashLink to="/#contact">Contact me</HashLink></li>
+            <li><HashLink  onClick={navigateHandler} smooth to="/#home">Home</HashLink></li>
+            <li><HashLink onClick={navigateHandler} smooth to="/#about">About me</HashLink></li>
+            <li><HashLink onClick={navigateHandler} smooth to="/#portfolio">Portfolio</HashLink></li>
+            <li><HashLink onClick={navigateHandler} smooth to="/#contact">Contact me</HashLink></li>
           </ul>
         </Container>
       </nav>

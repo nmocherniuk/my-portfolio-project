@@ -1,42 +1,95 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Header.module.css";
 import logo from "../../assets/logo.svg";
-import burgerIcon from "../../assets/icons/nav-bar-icon.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu, closeMenu } from "../../store/navigation-slice";
-import { FaBars } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
+import { scroller } from 'react-scroll';
+import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform, useMotionValueEvent, useAnimate} from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
+
 const Header = () => {
-    const [animate, setAnimate] = useState(false);
+    const overlay = useSelector(state => state.navigation.isOpen);
+    const [scope, animate] = useAnimate();
+
+
+   
     const dispatch = useDispatch();
 
+    const { scrollY } = useScroll();
+    const [hidden, setHidden] = useState(false);
+    const isMobile = useMediaQuery({ query: '(max-width: 481px)' });
+
+  
+    console.log(overlay);
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        console.log(scrollY);
+        const previous = scrollY.getPrevious();
+        if(latest > previous) {
+            setHidden(true)
+        } else {
+            setHidden(false)
+        }
+    })
+
+    useEffect(()=> {
+        const enterAnimation = async () => {
+            await animate(scope.current, {opacity: [0, 1]}, {duration: 1.5, delay: 0.4})
+        }
+
+        enterAnimation();
+    }, [overlay])
 
     const handleToggleBurger = () => {
-        dispatch(toggleMenu())
-        setAnimate(state => !state)
+        dispatch(toggleMenu());
+    
     }
 
     const handleCloseNavigation = () => {
-        dispatch(closeMenu())
-        setAnimate(false)
+        dispatch(closeMenu());
+
     }
 
+    const scrollTo = (element) => {
+        scroller.scrollTo(element, {
+            duration: 150,
+            delay: 0,
+            smooth: true,
+            containerId: "container"
+        });
+    }
 
     return (
-        <header className={classes.header}>
-            <NavLink to="/">
-                <img className={classes.logo} src={logo} alt="logo" onClick={handleCloseNavigation} />
-            </NavLink>
-            <button className={`${classes.hamburger} ${animate ? classes.active : ''}`} onClick={handleToggleBurger}>
-                <span className={classes["first-line"]}></span>
-                <span className={classes["second-line"]}></span>
-                <span className={classes["third-line"]}></span>
-                {animate && <span>back</span>}
-            </button>
-
-        </header>
-    )
+        <motion.header variants={{
+            visible: {y: 0},
+            hidden: {y: "-100%"}
+        }} animate={hidden ? "hidden" : "visible"} 
+        transition={{duration: 0.35, ease: "easeInOut"}}
+        
+        className={classes.header} >
+     <Link to="/">
+     <img
+                className={classes.logo}
+                src={logo}
+                alt="logo"
+                onClick={() => {
+                    handleCloseNavigation();
+                    scrollTo('home');
+                }}
+            />
+     </Link>      
+            <motion.button ref={scope}
+                className={`${classes.hamburger} ${overlay ? classes.active : ''}`}
+                onClick={handleToggleBurger}
+            >   
+            {overlay ? <IoArrowBackCircleSharp size={45} color="#D9D9D9"/> : <RxHamburgerMenu size={45} color="#D9D9D9"/>}
+          
+            </motion.button>
+        </motion.header>
+    );
 }
 
 export default Header;

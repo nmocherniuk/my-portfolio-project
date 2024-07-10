@@ -11,7 +11,7 @@ const ContactSection = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true })
     return (
-        <section style={{ height: '100vh', padding: '1rem 0px' }}>
+        <section id="contact" >
             <Light color="turquoise" style={{ height: '100vh' }} />
             <Container>
                 <motion.h2

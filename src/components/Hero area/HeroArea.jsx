@@ -9,8 +9,8 @@ import gitHubIcon from "../../assets/social-icons/pink-icons/github-icon.svg";
 import teregramIcon from "../../assets/social-icons/pink-icons/telegram-icon.svg";
 import Button from "../../UI/Button.jsx";
 import { FullpageSection, FullpageContext } from "@ap.cx/react-fullpage";
-import { motion, useScroll, useTransform } from 'framer-motion';
-
+import { motion, useScroll, useTransform, useAnimate } from 'framer-motion';
+import Container from "../../UI/Container.jsx";
 
 const HeroArea = () => {
 
@@ -22,24 +22,28 @@ const HeroArea = () => {
     });
 
     return (
-        <section id="home" style={{ height: '100vh', padding: '1rem 0px' }}>
+        <section id="home">
 
             <Light color="purple" />
-            <div className={classes.container}>
+          <Container>
+        
+                
                 <motion.div className={classes["hero-content"]}
+                variants={{ hidden: { opacity: 0, x: -200 }, visible: { opacity: 1, x: 0 } }}
                     initial="hidden"
                     animate="visible"
                     transition={{ duration: 0.5, delay: 0.25, type: "spring" }}
-                    variants={{ hidden: { opacity: 0, x: -200 }, visible: { opacity: 1, x: 0 } }}
+                    
                 >
-                    <div>
-                        Hello,
+                    <div className={classes.greeting}>
+                        <span>Hello,</span>
+                        
                         <h1>I'm Nazar Mocherniuk</h1>
-                        And I'm a <span>{typeEffect}</span>
+                        <span>And I'm a <span className={classes["text-typing"]}>{typeEffect}</span></span>
                     </div>
                     <p className={classes["hero-text"]}>
-                        A dedicated React Developer crafting dynamic web solutions.<br />
-                        I specialize in turning design blueprints into responsive,<br />
+                        A dedicated React Developer crafting dynamic web solutions.
+                        I specialize in turning design blueprints into responsive,
                         high-performance web applications with React.js.
                     </p>
                     <span className={classes["social-icons"]}>
@@ -50,10 +54,12 @@ const HeroArea = () => {
                     </span>
                     <Button classesButton={classes.button}>Download cv</Button>
                 </motion.div>
-                <div className={classes.photo}>
-
-                </div>
-            </div>
+                <motion.div    variants={{ hidden: { opacity: 1, x: -100 }, visible: { opacity: 1, x: 0 } }}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ duration: 0.5, delay: 0.25, type: "spring" }}  className={classes.photo}/>
+             
+            </Container>
 
 
 

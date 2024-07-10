@@ -3,3 +3,16 @@
     grid-template-columns: 1.1fr 1fr;
     column-gap: 50px;
 }
+
+.article-container h3 {
+    padding-right: 50px;
+}
+
+
+@media (min-width:320px) {
+    .article-container {
+        grid-template-columns: none;
+        column-gap: 0px;
+        row-gap: 50px;
+    }
+  }

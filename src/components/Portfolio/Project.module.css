@@ -32,3 +32,32 @@
     height: 59px;
     background: #a60566;
 }
+
+@media (min-width:320px) {
+    .project {
+        grid-template-columns: none;
+        row-gap: 20px;
+    }
+    .laptop {
+        width: 100%;
+        height:  100%;
+    }
+    .project-title {
+        font-size: 30px;
+        margin-bottom: 11px;
+       
+    }
+    .project-description {
+        text-align: center;
+        font-weight: 400;
+    }
+    .project-info {
+        align-items: center;
+    }
+    .button {
+        height: 47px;
+        font-size: 19px;
+        width: 100%;
+    }
+    
+  }

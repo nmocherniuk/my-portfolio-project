@@ -27,3 +27,31 @@
     font-size: 18px;
     cursor: pointer;
 }
+
+@media (min-width:320px) {
+    .introduction {
+        grid-column: 1 / 3;
+    }
+    .info-about-me {
+        gap: 15px;
+    }
+    .info-about-me > p {
+        font-size: 16.5px;
+        line-height: 24px;
+      
+    }
+    .custom-button {
+        background-color: transparent;
+        width: 100%;
+        height: 47px;
+        font-size: 19px;
+        cursor: pointer;
+    }
+  }
+
+
+@media (min-width: 641px) {
+    .introduction {
+        grid-column: 1 / 3;
+    }
+}
