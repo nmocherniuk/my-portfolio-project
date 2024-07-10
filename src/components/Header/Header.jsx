@@ -9,6 +9,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent, useAnimate} from 
 import { useMediaQuery } from 'react-responsive';
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { useLocation } from "react-router";
 
 const Header = () => {
     const overlay = useSelector(state => state.navigation.isOpen);
@@ -22,11 +23,13 @@ const Header = () => {
     const [hidden, setHidden] = useState(false);
     const isMobile = useMediaQuery({ query: '(max-width: 481px)' });
 
+    
   
-    console.log(overlay);
 
+  
     useMotionValueEvent(scrollY, "change", (latest) => {
-        console.log(scrollY);
+      console.log(latest);
+    
         const previous = scrollY.getPrevious();
         if(latest > previous) {
             setHidden(true)
@@ -53,6 +56,13 @@ const Header = () => {
 
     }
 
+    const scrollToHeroSection = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          })
+    }
+
     const scrollTo = (element) => {
         scroller.scrollTo(element, {
             duration: 150,
@@ -77,7 +87,8 @@ const Header = () => {
                 alt="logo"
                 onClick={() => {
                     handleCloseNavigation();
-                    scrollTo('home');
+                    scrollToHeroSection();
+                    // scrollTo('home');
                 }}
             />
      </Link>      

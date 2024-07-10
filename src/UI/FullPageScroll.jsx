@@ -37,7 +37,7 @@ const FullPageScroll = ({ children }) => {
 
 
   return (
-    <div id="container" className='container' ref={containerRef} onWheel={handleScroll} >
+    <div id="container" className='container' ref={containerRef}  onWheel={handleScroll} >
       {children}
     </div>
   );

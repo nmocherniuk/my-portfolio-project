@@ -8,7 +8,7 @@ import Container from '../../UI/Container';
 import { FullpageSection } from "@ap.cx/react-fullpage";
 import Light from '../../UI/Light';
 import { motion, useInView } from "framer-motion";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { useMediaQuery } from 'react-responsive';
@@ -56,7 +56,11 @@ function ProjectDetails() {
         onSwipedLeft: () => switchDevice((currentDeviceIndex + 1) % devices.length)
     })
 
+    const { pathname } = useLocation();
 
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
     return (
         <Fragment>
             <section>
