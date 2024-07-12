@@ -9,7 +9,8 @@ import {motion} from "framer-motion"
 const Feedbacks = ({isInView}) => {
     return (
         <div className={classes["feedbacks-container"]}>
-            <motion.div animate={{ opacity: isInView ? 1 : 0 }}
+            <motion.div whileInView={{ opacity: [0, 1] }}
+         viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }} className={classes["feedback-item"]}>
                 <div className={classes.rectangle} />
                 <div className={classes["feedback-content"]}>
@@ -26,7 +27,8 @@ const Feedbacks = ({isInView}) => {
                 </div>
             </motion.div>
             <motion.div 
-            animate={{ opacity: isInView ? 1 : 0 }}
+            whileInView={{ opacity: [0, 1] }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }} 
             className={classes["feedback-item"]}>
                 <div className={classes.rectangle} />
@@ -42,7 +44,8 @@ const Feedbacks = ({isInView}) => {
                 </div>
             </motion.div>
             <motion.div 
-            animate={{ opacity: isInView ? 1 : 0 }}
+            whileInView={{ opacity: [0, 1] }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={classes["feedback-item"]}>
                 <div className={classes.rectangle} />

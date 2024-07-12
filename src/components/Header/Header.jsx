@@ -28,7 +28,7 @@ const Header = () => {
 
   
     useMotionValueEvent(scrollY, "change", (latest) => {
-      console.log(latest);
+
     
         const previous = scrollY.getPrevious();
         if(latest > previous) {
@@ -63,14 +63,7 @@ const Header = () => {
           })
     }
 
-    const scrollTo = (element) => {
-        scroller.scrollTo(element, {
-            duration: 150,
-            delay: 0,
-            smooth: true,
-            containerId: "container"
-        });
-    }
+
 
     return (
         <motion.header variants={{
@@ -88,7 +81,7 @@ const Header = () => {
                 onClick={() => {
                     handleCloseNavigation();
                     scrollToHeroSection();
-                    // scrollTo('home');
+               
                 }}
             />
      </Link>      

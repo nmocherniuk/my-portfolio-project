@@ -14,7 +14,8 @@ function PaginationContainer({ totalProjects, projectperPage, paginate, currentP
     <motion.nav
    
     transition={{duration: 0.5, delay: 0.15, type: "spring"}}
-          animate={{opacity: isInViewRef ? 1 : 0, y: isInViewRef ? 0 : 100}}
+    whileInView={{ opacity: [0, 1], y: [100, 0]}}
+    viewport={{ once: true }}
     >
       <ul className={classes.container}>
         {pageNumbers.map(number => (

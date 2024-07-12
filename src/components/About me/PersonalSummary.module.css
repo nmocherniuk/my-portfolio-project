@@ -50,8 +50,14 @@
   }
 
 
-@media (min-width: 641px) {
+/* @media (min-width: 641px) {
     .introduction {
         grid-column: 1 / 3;
+    }
+} */
+
+@media (min-width: 641px) {
+    .introduction {
+        grid-column: 1 /  2;
     }
 }

@@ -35,7 +35,9 @@ const PROJECTS = [
 
 const PortfolioSection = () => {
   const ref = useRef(null);
+  const bottomRef = useRef(null);
   const isInView = useInView(ref, {once: true})
+  const bottomInView = useInView(bottomRef, {once: true})
   const [rerenderAnimation, setRerenderAnimation] = useState(false)
   const [projects, setProjects] = useState([]);
   const [currentProject, setCurrentProject] = useState(1);
@@ -66,7 +68,8 @@ const PortfolioSection = () => {
             transition={{ duration: 0.5, delay: 0.15, type: "spring" }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -100 }}
           >Portfolio</motion.h2>
-          <motion.p animate={{ opacity: isInView ? 1 : 0 }}
+          <motion.p whileInView={{ opacity: [0, 1] }}
+         viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="section-description" ref={ref}>
             Here you will find some of the personal and clients projects that I

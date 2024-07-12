@@ -9,6 +9,7 @@ import { motion, useInView } from "framer-motion"
 const ContactSection = () => {
 
     const ref = useRef(null);
+
     const isInView = useInView(ref, { once: true })
     return (
         <section id="contact" >
@@ -18,7 +19,8 @@ const ContactSection = () => {
                     transition={{ duration: 0.5, delay: 0.15, type: "spring" }}
                     animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -100 }}
                 >Contact with me</motion.h2>
-                <motion.p animate={{ opacity: isInView ? 1 : 0 }}
+                <motion.p whileInView={{ opacity: [0, 1]}}
+                 viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }} className="section-description" ref={ref}>Get in touch or shoot me an email directly on <span className='bold'>nazar.mocherniuk@gmail.com</span>.
                     I will get back to you as soon as possible</motion.p>
                 <Form isInViewRef={isInView}/>

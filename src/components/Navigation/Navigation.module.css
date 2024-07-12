@@ -82,3 +82,8 @@
       font-size: 10vw;
     }
   }
+  @media (min-width: 481px) {
+    .nav-container > li > a {
+      font-size: 47px;
+    }
+}

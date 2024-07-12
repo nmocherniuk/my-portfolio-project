@@ -13,7 +13,8 @@ const Form = ({isInViewRef}) => {
     return (
         <Fragment>
             <motion.div className={classes["form-container"]} transition={{duration: 0.5, delay: 0.3, type: "spring"}}
-          animate={{opacity: isInViewRef ? 1 : 0, y: isInViewRef ? 0 : 100}}>
+          whileInView={{opacity: [0, 1], y: [100, 0]}}
+          viewport={{ once: true }}>
                 <img className={classes["form-image"]} src={formImg} alt="Notebook image" />
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <div className={classes["form-input"]}>

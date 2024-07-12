@@ -112,3 +112,9 @@
 }
 
 }
+
+@media (min-width: 481px) {
+  .form {
+    padding: 3.5rem 2rem;
+  }
+}

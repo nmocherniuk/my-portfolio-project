@@ -45,6 +45,7 @@
     .project-title {
         font-size: 30px;
         margin-bottom: 11px;
+    
        
     }
     .project-description {
@@ -61,3 +62,7 @@
     }
     
   }
+  
+  @media (min-width: 481px) {
+
+}

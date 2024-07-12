@@ -6,8 +6,8 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        
-        padding: 0 1rem;
+/*         
+        padding: 0 1em; */
         align-items: center;
         z-index: 4;
     }
@@ -38,10 +38,27 @@
     .header {
         height: 70px;
         background-color: rgba(12, 12, 12, 0.77);
+        padding: 0 1em;
     }
   .header  img {
     height: 57px;
   }
  
 
+}
+@media (min-width: 481px) {
+    .header {
+        padding: 0 2em ;
+     
+    }
+}
+
+@media (min-width: 641px) {
+    .header {
+        height: 100px;
+    }
+    .header  img {
+        height: 70px;
+      }
+     
 }

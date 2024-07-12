@@ -13,13 +13,11 @@ function Project({ title, description, isInViewRef, animationRepeat }) {
     <li className={classes.project}>
   
         <motion.img
-          animate={{
-            opacity: (!animationRepeat ? (isInViewRef ? 1 : 0) : [0, 1]),
-            x: (!animationRepeat ? (isInViewRef ? 0 : -200) : [-200, 0])
-          }}
+         whileInView={{ opacity: [0, 1],   x: [-200, 0]}}
+         viewport={{ once: true }}
           transition={{
             duration: 1,
-            delay: !animationRepeat ? 0.15 : 0.3,
+            delay: 0.3,
             type: "spring"
           }}
           className={classes.laptop} src={laptopImg} alt="Laptop" />
@@ -27,13 +25,14 @@ function Project({ title, description, isInViewRef, animationRepeat }) {
 
       <div id="project-info">
         <motion.div
-          animate={{
-            opacity: (!animationRepeat ? (isInViewRef ? 1 : 0) : [0, 1]),
-            x: (!animationRepeat ? (isInViewRef ? 0 : 200) : [200, 0])
+          whileInView={{
+            opacity: [0, 1],
+            x: [200, 0]
           }}
+          viewport={{ once: true }}
           transition={{
             duration: 1,
-            delay: !animationRepeat ? 0.15 : 0.3,
+            delay: 0.3,
             type: "spring"
           }}
           className={classes["project-info"]}>

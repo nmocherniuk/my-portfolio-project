@@ -145,14 +145,14 @@ a {
 }
 
 section {
-  scroll-behavior: smooth; 
+  /* scroll-behavior: smooth; 
   scroll-snap-align: start;
   /* height: 100vh;  */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: auto;
+  overflow: auto; 
   
 }
 
@@ -197,5 +197,33 @@ section {
   a {
     text-transform: none;
 
+  }
+}
+@media (min-width: 481px) {
+  h1 {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 641px) {
+  .container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll; 
+    scroll-behavior: smooth;   
+    overflow: visible;
+    height: 100vh;
+  }
+  section {
+
+    margin-bottom: 0px;
+    height: 100vh; 
+    position: relative;
+    scroll-snap-align: start;
+    overflow: none;
+     scroll-behavior: smooth; 
+   
+  }
+  .section-description {
+    font-size: 16.5px;
   }
 }

@@ -23,19 +23,22 @@ const Footer = () => {
       <footer className={classes.footer}>
         <Container>
           <div className={classes["footer-profile"]}>
-            <motion.div animate={{ opacity: isInView ? 1 : 0 }}
+            <motion.div whileInView={{ opacity: [0, 1] }}
+             viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}>
               <h4>Nazar Mocherniuk</h4>
               <p>A dedicated React Developer crafting dynamic web solutions. I specialize in turning design blueprints into responsive, high-performance web applications with React.js. </p>
             </motion.div>
-            <motion.div animate={{ opacity: isInView ? 1 : 0 }}
+            <motion.div whileInView={{ opacity: [0, 1] }}
+             viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}>
               <h4 ref={ref}>View My CV</h4>
               <p>If you enjoyed browsing my site, feel free to check out my CV for more details about my work and experience.</p>
               <Button classesButton={classes.button}>Download cv</Button>
             </motion.div>
             <motion.div
-              animate={{ opacity: isInView ? 1 : 0 }}
+             whileInView={{ opacity: [0, 1] }}
+             viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}>
               <h4>Social Media</h4>
               <span className={classes["social-icons"]}>
@@ -48,7 +51,8 @@ const Footer = () => {
           </div>
           <Feedbacks isInView={isInView} />
         </Container>
-        <motion.span animate={{ opacity: isInView ? 1 : 0 }}
+        <motion.span whileInView={{ opacity: [0, 1] }}
+         viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}  className={classes["footer-copyright"]}>Copyright 2024. Mady by Nazar Mocherniuk</motion.span>
       </footer>
     </section>

@@ -27,9 +27,10 @@
   }
 
 
+
 @media (min-width: 641px) {
     .skills-article {
-        grid-column: 1 / 3;
-        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
     }
 }

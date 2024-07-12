@@ -7,10 +7,11 @@ import { motion } from "framer-motion";
 const Skills = ({ isInViewRef }) => {
     return (
         <motion.article className={classes["skills-article"]}
-        animate={{
-            opacity: isInViewRef ? 1 : 0,
-            x: isInViewRef ? 0 : 200
+        whileInView={{
+            opacity: [0, 1],
+            x: [200, 0]
         }}
+        viewport={{ once: true }}
         transition={{
             duration: 1,
             delay: 0.15,
