@@ -23,7 +23,7 @@ function Project({ title, description, isInViewRef, animationRepeat }) {
           className={classes.laptop} src={laptopImg} alt="Laptop" />
     
 
-      <div id="project-info">
+
         <motion.div
           whileInView={{
             opacity: [0, 1],
@@ -44,7 +44,7 @@ function Project({ title, description, isInViewRef, animationRepeat }) {
             </NavLink>
           </Button>
         </motion.div>
-      </div>
+
 
     </li>
   );

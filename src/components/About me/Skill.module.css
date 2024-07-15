@@ -29,3 +29,10 @@
         width: 100%;
     }
   }
+
+  @media (min-width: 641px) {
+    .skill {
+        width: 61.92px;
+        height: 96.46px;
+    }
+}

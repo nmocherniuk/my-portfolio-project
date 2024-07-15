@@ -19,9 +19,8 @@ function ProjectDetails() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true })
     const [currentDeviceIndex, setCurrentDeviceIndex] = useState(0);
-    const isMobile = useMediaQuery({ query: '(max-width: 481px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 641px)' });
     const controls = useAnimationControls()
-    
     const swipeRef = useRef(null)
 
     const devices = [
@@ -70,6 +69,30 @@ function ProjectDetails() {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
+
+
+    let mobileContent = <Fragment>   <motion.img animate={controls} {...handlers}
+                            
+                           
+        className={`${classes["is-mobile-devise"]} ${classes[devices[currentDeviceIndex].imgTitle]}`} src={devices[currentDeviceIndex].imgSrc} alt={`${devices[currentDeviceIndex].imgTitle}`} />
+    <motion.div    className={classes["swipe-hint"]} ref={swipeRef}>
+
+        <div className={classes.swipe}>
+            <div className={classes.path}></div>
+            <img src={handIcon} alt="hand icon" className={classes['hand-icon']} />
+        </div>
+        Swipe devise
+    </motion.div></Fragment>
+
+        let notMobileContent = <Fragment>
+            <motion.img  animate={{opacity: [0, 1]}}
+                        transition={{ duration: 0.6, delay: 0.3, type: "spring" }} className={classes.laptop} src={laptop} alt="Laptop" />
+                        <motion.img  animate={{opacity: [0, 1]}}
+                        transition={{ duration: 0.6, delay: 0.35, type: "spring" }} className={classes.tablet} src={tablet} alt="Tablet" />
+                        <motion.img  animate={{opacity: [0, 1]}}
+                        transition={{ duration: 0.6, delay: 0.35, type: "spring" }} className={classes.mobile} src={mobile} alt="Phone" />
+        </Fragment>
+
     return (
         <Fragment>
             <section>
@@ -86,25 +109,10 @@ function ProjectDetails() {
                         Ut enim ad minim veniam, quis nostrud </motion.p>
                     <motion.div className={classes.devises}  animate={{ opacity: [0, 1]}}
                             transition={{ duration: 0.6, delay: 0.35, type: "spring" }}>
-                        {/* <FaArrowAltCircleLeft size={'10vw'} className={classes.arrow}/> */}
-                        
-                        <motion.img animate={controls} {...handlers}
-                            
-                           
-                            className={classes[`${devices[currentDeviceIndex].imgTitle}`]} src={devices[currentDeviceIndex].imgSrc} alt={`${devices[currentDeviceIndex].imgTitle}`} />
-                        <motion.div    className={classes["swipe-hint"]} ref={swipeRef}>
 
-                            <div className={classes.swipe}>
-                                <div className={classes.path}></div>
-                                <img src={handIcon} alt="hand icon" className={classes['hand-icon']} />
-                            </div>
-                            Swipe devise
-                        </motion.div>
-                        {/* <motion.img  animate={{opacity: [0, 1]}}
-                        transition={{ duration: 0.6, delay: 0.3, type: "spring" }} className={classes.laptop} src={laptop} alt="Laptop" />
-                        <motion.img  animate={{opacity: [0, 1]}}
-                        transition={{ duration: 0.6, delay: 0.35, type: "spring" }} className={classes.iphone} src={iphone} alt="Iphone" /> */}
-                        {/* <FaArrowAltCircleRight size={'10vw'} color={'#333333'} className={classes.arrow}/> */}
+                {isMobile && mobileContent}
+                {!isMobile && notMobileContent}
+               
                     </motion.div>
                 </Container>
             </section>

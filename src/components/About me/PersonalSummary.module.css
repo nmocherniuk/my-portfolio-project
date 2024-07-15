@@ -60,4 +60,9 @@
     .introduction {
         grid-column: 1 /  2;
     }
+    .info-about-me > p {
+        font-size: 15.8px;
+        line-height: 24px;
+      
+    }
 }

@@ -66,3 +66,36 @@
   @media (min-width: 481px) {
 
 }
+
+@media (min-width: 641px) {
+    .project-title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .project-description {
+        margin-bottom: 20px;
+    }    
+    .project {
+        grid-template-columns: 1.2fr 1fr;
+   
+    }
+    .laptop {
+        max-height: 250px;
+        max-width: 390px;
+    }
+    .button {
+        padding: 0px 45px;
+        width: inherit;
+    }
+}
+
+@media (min-width: 961px) {
+    .projects-container {
+        gap: px;
+    }
+    .laptop {
+        max-height: 280px;
+        max-width: 450px;
+    }
+    
+}

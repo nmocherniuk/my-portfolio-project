@@ -5,7 +5,13 @@
 }
 
 @media (min-width:320px) {
-    .container {
+    .projects-container {
         min-width: 310px;
     }
   }
+
+  /* @media (min-width: 961px) {
+    .projects-container {
+        gap: px;
+    }
+} */

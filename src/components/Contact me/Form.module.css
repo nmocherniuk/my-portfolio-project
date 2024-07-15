@@ -96,7 +96,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height:  550px;
+    height:  inherit;
     border: 3px solid #A60A40;
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
@@ -117,4 +117,13 @@
   .form {
     padding: 3.5rem 2rem;
   }
+}
+
+@media (min-width: 641px) {
+  .button {
+    width: initial;
+    padding: 0px 60px;
+    align-self: flex-end;
+  }
+
 }

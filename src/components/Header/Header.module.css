@@ -55,10 +55,24 @@
 
 @media (min-width: 641px) {
     .header {
+        padding: 0 1.5em ;
+     
+    }
+}
+
+@media (min-width: 961px) {
+    .header {
         height: 100px;
+        padding: 0 2em ;
     }
     .header  img {
         height: 70px;
       }
-     
+      
+}
+
+@media (min-width: 1025px) {
+    .header {
+        background-color: transparent;
+    }
 }

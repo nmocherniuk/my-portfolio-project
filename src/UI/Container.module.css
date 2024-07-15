@@ -28,24 +28,26 @@
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
 @media (min-width: 641px) {
     .container {
-        height: 100dvh;
-        min-width: 616px;
-        max-width: none;
+        max-width: 890px;
+        min-height: 100vh;
     }
 }
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width: 961px) {
     .container {
+        min-height: 100dvh;
         max-width: 910px;
     }
 }
 /* big landscape tablets, laptops, and desktops */
 @media (min-width: 1025px) {
     .container {
-        max-width: 990px;
+        min-height: inherit;
+
+        max-width: 1200px;
     }
 }
-/* hi-res laptops and desktops */
+/* hi-res laptops and desktops */   
 @media (min-width: 1281px) {
     .container {
         max-width: 1210px;

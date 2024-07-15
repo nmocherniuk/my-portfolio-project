@@ -81,8 +81,12 @@
     }
     .social-icons {
         justify-content: center;
-        height: 45px;
+   
         gap: 10px;
+    }
+    .social-icons > img {
+        height: 45px;
+        width: 45px;
     }
     .button {
         height: 47px;
@@ -105,13 +109,78 @@
     .photo {
         margin-top: 70px;
         height: 400px;
-
     }
 }
 
 @media (min-width: 641px) {
     .photo {
-        margin-top: 100px;
-        height: 420px;
+        width: 840px;
+        height: 330px;
+        margin-bottom: 0;
     }
+    .greeting{
+        font-size: 22.1px;
+        font-weight: 600;
+    }
+    .hero-content  {
+        order: 0;
+        text-align: start;
+        align-self: center;
+        margin-top: 70px;
+    }
+    .hero-text {
+        text-align: start;
+           margin: 5px 0px 10px 0px;
+           width: 90%;
+      
+    }
+    .social-icons {
+        justify-content: start;
+        margin: 20px 0px;
+    }
+    .social-icons > img {
+        height: 40px;
+        width: 40px;
+    }
+    .button {
+        padding: 0px 45px;
+        width: inherit;
+    }
+
   }
+
+
+  @media (min-width: 961px) {
+    .greeting{
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .greeting > span:first-child {
+        display: block;
+    }
+    .social-icons > img {
+        height: 43px;
+        width: 43px;
+    }
+    .hero-text {
+        text-align: start;
+        margin: 5px 0px 10px 0px;
+        width: 100%;
+    }
+}
+
+  /* .greeting{
+    font-size: 28px;
+    font-weight: 600;
+}
+.button {
+    width: 300px;
+
+}
+.hero-text {
+    margin: 15px 0px 20px 0px;
+    max-width: 665px;
+}
+.social-icons {
+    margin: 20px 0px;
+} */
