@@ -50,7 +50,7 @@
     }
     .project-description {
         text-align: center;
-        font-weight: 400;
+        font-weight: 300;
     }
     .project-info {
         align-items: center;
@@ -111,5 +111,18 @@
     }
     .button {
         height: 50px;
+    }
+}
+
+
+@media (min-width: 1281px) {
+    .project {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        column-gap: 50px;
+    }
+    .laptop {
+        max-height: 360px;
+        max-width: 530px;
     }
 }

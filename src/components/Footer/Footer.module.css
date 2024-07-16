@@ -101,10 +101,13 @@
 @media (min-width: 1025px) {
     .footer-profile {
         flex: 0.9;
-        display: grid;
-        grid-template-columns:none;
-        column-gap: 15px;
-        align-self: center;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .social-icons > img {
+        width: 45px;
+        height: 45px;
     }
 }
     

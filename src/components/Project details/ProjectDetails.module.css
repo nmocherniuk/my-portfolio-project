@@ -386,5 +386,11 @@
         width: 120px;
         top: 56%;
     }
-
+    .details-container a {
+   
+        font-size: 18px;
+    }
+     .footer-copyright {
+        padding: 20px 0px;
+     }
 }

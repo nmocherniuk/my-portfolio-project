@@ -266,6 +266,8 @@ section {
   }
   .section-footer > footer > div:nth-last-of-type(1) {
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
   }
   h1 {
     font-size: 42.2px;
@@ -282,5 +284,24 @@ section {
   }
   .section-description {
     font-size: 16px;
+  }
+}
+
+@media (min-width: 1281px) {
+
+ 
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 42px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+  .section-description {
+ 
+    margin-bottom: 60px;
   }
 }

@@ -203,8 +203,7 @@ function ProjectDetails() {
                         <motion.button whileInView={{ opacity: [0, 1] }}
                         viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.3 }} className={classes.button}><HashLink to="/#portfolio">Back to home Page</HashLink></motion.button>
-                        <motion.span whileInView={{ opacity: [0, 1]}}
-                            transition={{ duration: 0.5, delay: 0.4 }} className={classes["footer-copyright"]}>Copyright 2024. Mady by Nazar Mocherniuk</motion.span>
+           
                     </div>
 
 

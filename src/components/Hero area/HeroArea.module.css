@@ -144,7 +144,7 @@
     }
     .button {
         padding: 0px 45px;
-        width: inherit;
+        width: initial;
     }
 
   }
@@ -183,6 +183,28 @@
         width: 45px;
     }
 }
+
+@media (min-width: 1281px) {
+    .hero-content  {
+        
+        width: 700px;
+    }
+    .photo {
+        flex: 1;
+    }
+    .greeting{
+        font-size: 36px;
+      
+    }
+    .social-icons > img {
+        height: 47px;
+        width: 47px;
+    }
+    .button {
+        padding: 23px 49px;
+      
+    }
+  }
 
   /* .greeting{
     font-size: 28px;

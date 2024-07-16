@@ -50,7 +50,7 @@
 /* hi-res laptops and desktops */   
 @media (min-width: 1281px) {
     .container {
-        max-width: 1210px;
+        max-width: calc(90vw - 96px);
     }
 }
 /*veryhuge desktops*/
