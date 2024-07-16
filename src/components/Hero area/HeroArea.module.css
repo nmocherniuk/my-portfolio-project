@@ -169,6 +169,21 @@
     }
 }
 
+@media (min-width: 1025px) {
+    .greeting{
+        font-size: 30px;
+      
+    }
+    .hero-text {
+        width: 544px;
+      
+    }
+    .social-icons > img {
+        height: 45px;
+        width: 45px;
+    }
+}
+
   /* .greeting{
     font-size: 28px;
     font-weight: 600;

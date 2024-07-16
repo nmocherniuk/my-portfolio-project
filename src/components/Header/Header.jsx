@@ -15,13 +15,13 @@ const Header = () => {
     const overlay = useSelector(state => state.navigation.isOpen);
     const [scope, animate] = useAnimate();
 
-
+ 
    
     const dispatch = useDispatch();
 
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
-    const isMobile = useMediaQuery({ query: '(max-width: 481px)' });
+    const scrollerType = useMediaQuery({ query: '(min-width: 1025px)' });
 
     
   
@@ -57,12 +57,25 @@ const Header = () => {
     }
 
     const scrollToHeroSection = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          })
+        if (!scrollerType) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+        
+              })
+        } else if (scrollerType) {
+            scroller.scrollTo('home', {
+                duration: 200,
+                smooth: true,
+                containerId: 'container',
+              });
+        }
+        
+         
+        
+        
     }
-
+  
 
 
     return (

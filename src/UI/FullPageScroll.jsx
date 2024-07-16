@@ -1,16 +1,16 @@
 import React, { useRef, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 const FullPageScroll = ({ children }) => {
   const overlay = useSelector(state => state.navigation.isOpen);
   const containerRef = useRef(null);
   const isScrolling = useRef(false);
+
+
   useEffect(()=> {
     containerRef.current.tabIndex = 0;
     containerRef.current.focus();
   },[])
-
-
 
   const handleScroll = (e) => {
     if (containerRef.current && !isScrolling.current) {
@@ -36,9 +36,13 @@ const FullPageScroll = ({ children }) => {
   };
 
 
+
+
   return (
     <div id="container" className='container' ref={containerRef}  onWheel={handleScroll} >
+
       {children}
+
     </div>
   );
 };

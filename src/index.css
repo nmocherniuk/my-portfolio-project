@@ -101,6 +101,8 @@ button {
   font-size: 20px;
   border-radius: 7px;
   border: none;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -217,7 +219,9 @@ section {
 }
   .section-footer > footer > div:nth-last-of-type(1) {
     min-height: 80vh;
+    align-items: end;
   }
+
 
 .section-description {
   max-width: 609px;
@@ -259,5 +263,24 @@ section {
     align-items: center;
     justify-content: center;
    
+  }
+  .section-footer > footer > div:nth-last-of-type(1) {
+    flex-direction: row;
+  }
+  h1 {
+    font-size: 42.2px;
+  }
+  p {
+    font-size: 16.5px;
+    line-height: 24.75px;
+  }
+  h2 {
+    font-size: 38px;
+  }
+  h3 {
+    font-size: 27.5px;
+  }
+  .section-description {
+    font-size: 16px;
   }
 }

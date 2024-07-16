@@ -115,7 +115,7 @@
 
 @media (min-width: 481px) {
   .form {
-    padding: 3.5rem 2rem;
+    padding: 3rem 2rem;
   }
 }
 
@@ -125,5 +125,11 @@
     padding: 0px 60px;
     align-self: flex-end;
   }
+ 
+}
 
+@media (min-width: 1025px) {
+  .form {
+    padding: 2.5rem 2rem;
+  }
 }

@@ -90,12 +90,26 @@
 }
 
 @media (min-width: 961px) {
-    .projects-container {
-        gap: px;
-    }
     .laptop {
         max-height: 280px;
         max-width: 450px;
     }
     
+}
+
+@media (min-width: 1025px) {
+    .project-title {
+        font-size: 34px;
+        font-weight: 600;
+    }
+    .project-description {
+        max-width: 400px;
+    } 
+    .laptop {
+        max-height: 320px;
+        max-width: 490px;
+    }
+    .button {
+        height: 50px;
+    }
 }

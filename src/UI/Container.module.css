@@ -43,8 +43,8 @@
 @media (min-width: 1025px) {
     .container {
           height: 100%;
-
-        max-width: 1200px;
+        min-height: inherit;
+        max-width: calc(90vw - 96px);
     }
 }
 /* hi-res laptops and desktops */   

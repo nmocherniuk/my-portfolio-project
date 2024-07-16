@@ -11,9 +11,9 @@
 }
 
 .info-about-me > p {
-    font-size: 18px;
+    /* font-size: 18px; */
     font-weight: 200;
-    line-height: 27px;
+    /* line-height: 27px; */
 }
 
 .custom-button {
@@ -26,6 +26,7 @@
         linear-gradient(to right, #99A550 30%, #2D9687 60%) border-box;
     font-size: 18px;
     cursor: pointer;
+    justify-content: center;
 }
 
 @media (min-width:320px) {
@@ -35,11 +36,7 @@
     .info-about-me {
         gap: 15px;
     }
-    .info-about-me > p {
-        font-size: 16.5px;
-        line-height: 24px;
-      
-    }
+
     .custom-button {
         background-color: transparent;
         width: 100%;
@@ -60,9 +57,11 @@
     .introduction {
         grid-column: 1 /  2;
     }
-    .info-about-me > p {
-        font-size: 15.8px;
-        line-height: 24px;
-      
+   
+}
+
+@media (min-width: 1025px) {
+    .introduction {
+        max-width: 500px;
     }
 }

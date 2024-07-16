@@ -23,3 +23,14 @@
         font-size: 16.5px;
     }
   }
+  
+
+  @media (min-width: 1025px) {
+    
+    .pagination {
+        height: 52px;
+        width: 52px;
+        font-size: 17px;
+    }
+    }
+    

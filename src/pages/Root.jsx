@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/Header/Header";
 import { AnimatePresence } from "framer-motion";
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSelector } from "react-redux";
 import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer";
@@ -10,9 +10,12 @@ import Footer from "../components/Footer/Footer";
 function RootLayout() {
   const location = useLocation()
   const overlay = useSelector(state => state.navigation.isOpen);
+  function scrollToTop(containerRef) {
+    containerRef.current.scrollTo(0,0)
+  }
   return (
     <div>
-      <Header />
+      <Header  />
       <AnimatePresence >
         {overlay && <Navigation />}
       </AnimatePresence>

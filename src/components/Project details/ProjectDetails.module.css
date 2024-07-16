@@ -358,9 +358,9 @@
         width: initial;
         padding: 0px 45px;
         height: 47px;
+   
     }
     .button > a {
-   
         font-size: 19px;
         
     }
@@ -370,4 +370,21 @@
     .project-title {
       margin-top: 80px;
     }
+}
+
+@media (min-width: 1025px) {
+    .laptop {
+        
+        width: 520px;
+    }
+    .tablet {
+        left: -50px;
+        width: 200px;
+    }
+    .mobile {
+        right: -10px;
+        width: 120px;
+        top: 56%;
+    }
+
 }

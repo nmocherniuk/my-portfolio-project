@@ -6,14 +6,16 @@ import PortfolioSection from '../components/Portfolio/PortfolioSection'
 import ContactSection from '../components/Contact me/ContactSection'
 import Footer from '../components/Footer/Footer'
 import Transition from '../UI/Transition'
-
+import { useOutletContext } from 'react-router-dom'
 
 
 function MainPage() {
+  
+
     return (
         <Transition>
             
-            <FullPageScroll>
+            <FullPageScroll >
                 <HeroArea/>
                 <AboutSection />
                 <PortfolioSection />
