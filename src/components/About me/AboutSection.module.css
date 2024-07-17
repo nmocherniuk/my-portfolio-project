@@ -20,13 +20,19 @@
     .article-container {
         grid-template-columns: 1.5fr 1fr;
         row-gap: 0px;
-        column-gap: 30px;
+        column-gap: 50px;
     }
 }
 @media (min-width: 1025px) {
     .article-container {
         grid-template-columns: 1.2fr 1fr;
         row-gap: 0px;
+        column-gap: 40px;
+    }
+}
+@media (min-width: 1281px) {
+    .article-container {
+        grid-template-columns: 1.2fr 1fr;
         column-gap: 30px;
     }
 }

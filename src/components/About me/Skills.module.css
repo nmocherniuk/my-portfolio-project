@@ -38,3 +38,9 @@
         gap: 10px;
     }
 }
+
+@media (min-width: 1281px) {
+    .skills-article {
+        max-width: 488px;
+    }
+}

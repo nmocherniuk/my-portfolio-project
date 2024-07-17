@@ -1,0 +1,94 @@
+
+
+.greeting{
+    font-size: 45px;
+}
+
+.hero-text {
+    margin: 15px 0px;
+}
+
+.text-typing {
+   
+    border-right: .15em solid #dfe2e4; 
+    animation: 25s steps(15), blink-caret .75s step-end infinite; 
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #eef0f3 }
+}
+
+
+@media (min-width:320px) {
+
+    .greeting{
+        font-size: 21px;
+        font-weight: 600;
+    }
+    .greeting > span:first-child {
+        display: none;
+    }
+    .hero-text {
+        text-align: center;
+        font-weight: 300;
+        margin: 7px 0px;
+    }  
+}
+
+@media (min-width: 641px) {
+    .greeting{
+        font-size: 22.1px;
+        font-weight: 600;
+    }
+
+    .hero-text {
+        text-align: start;
+           margin: 5px 0px 10px 0px;
+           width: 90%;
+      
+    }
+  }
+
+
+  @media (min-width: 961px) {
+    .greeting{
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .greeting > span:first-child {
+        display: block;
+    }
+
+    .hero-text {
+        text-align: start;
+        margin: 5px 0px 10px 0px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .greeting{
+        font-size: 30px;
+      
+    }
+    .hero-text {
+        width: 544px;
+      
+    }
+
+}
+
+@media (min-width: 1281px) {
+    .hero-content  {
+        
+        width: 700px;
+    }
+
+    .greeting{
+        font-size: 36px;
+      
+    }
+
+  }
+

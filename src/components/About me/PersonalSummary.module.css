@@ -36,7 +36,9 @@
     .info-about-me {
         gap: 15px;
     }
-
+    .info-about-me > p {
+        text-align: justify;
+    }
     .custom-button {
         background-color: transparent;
         width: 100%;
@@ -64,4 +66,13 @@
     .introduction {
         max-width: 500px;
     }
+ 
+}
+
+@media (min-width: 1281px) {
+    .introduction {
+        max-width: 550px;
+    }
+  
+
 }

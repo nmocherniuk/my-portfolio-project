@@ -103,6 +103,7 @@ button {
   border: none;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 
@@ -303,5 +304,13 @@ section {
   .section-description {
  
     margin-bottom: 60px;
+  }
+  .section-footer > footer > div:nth-last-of-type(1) {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  .section-footer {
+    height: 80dvh;
   }
 }

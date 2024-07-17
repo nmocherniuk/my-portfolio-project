@@ -103,7 +103,7 @@
         font-weight: 600;
     }
     .project-description {
-        max-width: 400px;
+        max-width: 380px;
     } 
     .laptop {
         max-height: 320px;
@@ -119,10 +119,20 @@
     .project {
         display: grid;
         grid-template-columns: 1.4fr 1fr;
-        column-gap: 50px;
+ 
     }
     .laptop {
-        max-height: 360px;
-        max-width: 530px;
+        width: 620px;
+        height: 418px;
+    }
+    .project-title {
+        font-size: 38px;
+        font-weight: 500;
+    }
+    
+ 
+    .project-description {
+        margin-bottom: 25px;
+
     }
 }

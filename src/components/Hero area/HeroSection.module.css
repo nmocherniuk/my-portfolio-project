@@ -36,13 +36,6 @@
 }
 
 
-
-.social-icons {
-    display: flex;
-    gap: 14px;
-    margin: 25px 0px;
-}
-
 .photo {
     width: 200px;
     height: 200px;
@@ -78,15 +71,6 @@
         text-align: center;
         font-weight: 300;
         margin: 7px 0px;
-    }
-    .social-icons {
-        justify-content: center;
-   
-        gap: 10px;
-    }
-    .social-icons > img {
-        height: 45px;
-        width: 45px;
     }
     .button {
         height: 47px;
@@ -134,14 +118,7 @@
            width: 90%;
       
     }
-    .social-icons {
-        justify-content: start;
-        margin: 20px 0px;
-    }
-    .social-icons > img {
-        height: 40px;
-        width: 40px;
-    }
+
     .button {
         padding: 0px 45px;
         width: initial;
@@ -158,10 +135,7 @@
     .greeting > span:first-child {
         display: block;
     }
-    .social-icons > img {
-        height: 43px;
-        width: 43px;
-    }
+
     .hero-text {
         text-align: start;
         margin: 5px 0px 10px 0px;
@@ -178,10 +152,7 @@
         width: 544px;
       
     }
-    .social-icons > img {
-        height: 45px;
-        width: 45px;
-    }
+
 }
 
 @media (min-width: 1281px) {
@@ -196,28 +167,9 @@
         font-size: 36px;
       
     }
-    .social-icons > img {
-        height: 47px;
-        width: 47px;
-    }
     .button {
         padding: 23px 49px;
       
     }
   }
 
-  /* .greeting{
-    font-size: 28px;
-    font-weight: 600;
-}
-.button {
-    width: 300px;
-
-}
-.hero-text {
-    margin: 15px 0px 20px 0px;
-    max-width: 665px;
-}
-.social-icons {
-    margin: 20px 0px;
-} */
