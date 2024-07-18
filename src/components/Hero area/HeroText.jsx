@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import classes from './HeroText.module.css';
 
-function HeroText() {
+const HeroText = () => {
 
     const [typeEffect] = useTypewriter({
         words: ['Front-End Developer.'],

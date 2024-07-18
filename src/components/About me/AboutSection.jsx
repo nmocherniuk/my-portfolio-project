@@ -1,43 +1,34 @@
-import React, { Fragment, useRef } from "react";
-import Container from "../../UI/Container.jsx";
-import classes from "./AboutSection.module.css";
-import PersonalSummary from "./PersonalSummary.jsx";
-import Skills from "./Skills.jsx";
-import Light from "../../UI/Light.jsx";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import React, { useRef, lazy, Suspense } from 'react';
+import { useInView } from 'framer-motion';
+import classes from './AboutSection.module.css';
+
+const Light = lazy(() => import('../../UI/Light.jsx'));
+const Container = lazy(() => import('../../UI/Container.jsx'));
+const AnimatedHeading = lazy(() => import('../../UI/AnimatedHeading.jsx'));
+const SectionDescription = lazy(() => import('../../UI/SectionDescription.jsx'));
+const PersonalSummary = lazy(() => import('./PersonalSummary.jsx'));
+const Skills = lazy(() => import('./Skills.jsx'));
 
 const AboutSection = () => {
-  const topRef = useRef(null);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const descriptionRef = useRef(null);
+  const isInViewDescription = useInView(descriptionRef, { once: true });
 
   return (
-    <section id="about" ref={topRef}>
-      <Fragment>
-        <Light color="green" />
+    <section id='about'>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Light color='green' />
         <Container>
-          <motion.h2
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -200 }}
-            transition={{ duration: 0.5, delay: 0.15, type: "spring" }}
-          >
-            About me
-          </motion.h2>
-          <motion.p
-            ref={ref}
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="section-description"
-          >
+          <AnimatedHeading isInView={isInViewDescription}>About me</AnimatedHeading>
+          <SectionDescription ref={descriptionRef}>
             Here you will find more information about me, what I do, and my
             current skills mostly in terms of programming and technology.
-          </motion.p>
-          <div className={classes["article-container"]}>
+          </SectionDescription>
+          <div className={classes['article-container']}>
             <PersonalSummary />
             <Skills />
           </div>
         </Container>
-      </Fragment>
+      </Suspense>
     </section>
   );
 };

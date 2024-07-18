@@ -1,0 +1,39 @@
+.section-description {
+  display: block;
+  /* width: 800px; */
+  font-size: 18px;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+
+
+@media (min-width:320px) {
+  .section-description {
+    margin-bottom: 50px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+  }
+}
+
+@media (min-width: 641px) {
+.section-description {
+  max-width: 609px;
+}
+}
+
+
+@media (min-width: 1025px) {
+  .section-description {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .section-description {
+ 
+    margin-bottom: 60px;
+  }
+}

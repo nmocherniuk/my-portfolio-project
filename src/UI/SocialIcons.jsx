@@ -13,7 +13,7 @@ const socialLinks = [
     { href: "https://github.com", src: gitHubIcon, alt: "GitHub icon" }
 ];
 
-function SocialIcons() {
+const SocialIcons = () => {
     return (
         <nav className={classes["social-icons"]}>
             {socialLinks.map((link, index) => (
