@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'portfolio/details',
+        path: 'portfolio/details/:projectId',
         element: <PortfilioPage />
       },
     ],

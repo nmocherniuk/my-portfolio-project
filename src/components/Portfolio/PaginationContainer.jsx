@@ -1,29 +1,31 @@
-import React, { useEffect, useState } from "react";
-import Pagination from "./Pagination";
-import classes from "./PaginationContainer.module.css";
-import {motion} from "framer-motion"
+import React, { Suspense, lazy } from 'react';
+import { motion as m } from 'framer-motion';
+import classes from './PaginationContainer.module.css';
 
+const Pagination = lazy(() => import('./Pagination'));
 
-function PaginationContainer({ totalProjects, projectperPage, paginate, currentProject, isInViewRef }) {
+const PaginationContainer = ({ totalProjects, projectperPage, paginate, currentProject }) => {
   const pageNumbers = [];
+
   for (let i = 1; i <= Math.ceil(totalProjects / projectperPage); i++) {
     pageNumbers.push(i);
-  }
-  
+  };
+
   return (
-    <motion.nav
-   
-    transition={{duration: 0.5, delay: 0.15, type: "spring"}}
-    whileInView={{ opacity: [0, 1], y: [100, 0]}}
-    viewport={{ once: true }}
+    <m.nav
+      transition={{ duration: 0.5, delay: 0.15, type: 'spring' }}
+      whileInView={{ opacity: [0, 1], y: [100, 0] }}
+      viewport={{ once: true }}
     >
-      <ul className={classes.container}>
-        {pageNumbers.map(number => (
-          <Pagination key={number} number={number} paginate={paginate} isActive={currentProject === number}/>
-        ))}
-      </ul>
-    </motion.nav>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ul className={classes.container}>
+          {pageNumbers.map(number => (
+            <Pagination key={number} number={number} paginate={paginate} isActive={currentProject === number} />
+          ))}
+        </ul>
+      </Suspense>
+    </m.nav>
   );
-}
+};
 
 export default PaginationContainer;

@@ -3,6 +3,15 @@
     grid-template-columns: 1.2fr 1fr;
 }
 
+.button {
+  font-size: 20px;
+  border-radius: 7px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .laptop {
     width: 603px;
     height: 401px;

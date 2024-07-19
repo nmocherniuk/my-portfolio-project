@@ -1,11 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import navigationSlice from './navigation-slice';
+import navigationReducer from './navigation-slice';
+import projectReducer from './project-slice';
 
 const store = configureStore({
   reducer: {
-      navigation: navigationSlice,
-  }
+    navigation: navigationReducer,
+    project: projectReducer,
+  },
 });
-
 
 export default store;

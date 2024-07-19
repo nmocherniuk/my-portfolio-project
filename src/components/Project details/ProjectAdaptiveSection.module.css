@@ -1,0 +1,428 @@
+.project-title {
+    border: none;
+    font-size: 45px;
+    color: #AE1E78;
+    font-weight: 600;
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    justify-content: space-between; /* Замініть 'space-around' на 'space-between' для тестування */
+    row-gap: 20px; /* Додайте gap, якщо потрібно */
+
+}
+
+/* .details-container > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+} */
+
+.about-project {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.technologies-project {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}   
+
+.role-project {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.website-project {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+} 
+
+.github-project {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.details-container h4 {
+    font-size: 35px;
+    border-bottom-color: #E9B171;
+    font-weight: 600;
+}
+
+.details-container  p {
+
+    font-weight: 200; 
+}
+
+.about-project > p:nth-of-type(1) {
+    margin-bottom: 10px;
+}
+
+.devises {
+    width: 100%;
+    height: 668px;
+    position: relative;
+}
+
+.laptop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.mobile {
+    position: absolute;
+    right: 120px; /* Зменште значення, щоб зсунути лівіше */
+    top: 59%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+
+.tablet {
+    position: absolute;
+    left: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.button {
+    background-color: transparent;
+    color: #AE1E78;
+    border: 3px solid #AE1E78;
+    font-size: 25px;
+    padding: 7px 25px;
+}
+
+.button > a {
+    color: #AE1E78;
+    background-color: transparent;
+    text-transform: none;
+    font-size: 25px;
+    /* font-weight: 500; */
+}
+
+.footer-copyright {
+    display: block;
+    text-align: center;
+     padding: 34px 0px;
+ }
+
+ .details-container a {
+    color: #2D9687;
+    font-size: 19px;
+    text-decoration: none;
+    text-transform: none;
+ }
+
+ .details-container a:visited {
+    color: #2D9687;
+    font-style: none;
+ }
+
+.swipe-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.swipe {
+    position: relative;
+    width: 32px;
+}
+ .path {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: rgba(37, 49, 117, 0.5);
+    border-radius: 40px;
+    top: -10px;
+    left: 43px;
+    visibility: hidden;
+    animation: swipe-dot 2s 0.5s infinite;
+}
+
+.hand-icon {
+    position: relative;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 46px;
+    animation: swipe-hand 2s infinite;
+    transform-origin: 52% 62%;
+}
+
+@keyframes swipe-hand {
+    25% { transform: translate(20px) rotate(30deg); }
+    50% { transform: translate(-20px) rotate(-15deg); }
+    100% { transform: translate(0px) rotate(0); }
+}
+
+@keyframes swipe-dot {
+  12% {
+    visibility: visible;
+    width: 40px;
+  }
+  25% {
+    visibility: visible;
+    transform: translate(-65px);
+    width: 20px;
+  }
+  26% { visibility: hidden; }
+
+}
+
+
+ @media (min-width:320px) {
+    .about-project {
+        text-align: justify;
+     }
+   
+     .role-project {
+         text-align: justify;
+     }
+    .project-title {
+        font-size: 9vw;
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .devises {
+        width: 100%;
+        position: relative;
+        height: auto;
+        display: grid;
+    }
+    .laptop, .tablet, .mobile {
+     
+        justify-self: center;
+    }
+    .laptop {
+        width: 86vw;
+        position: static;
+        transform: none;
+        margin-bottom: 20px;
+    }
+    .tablet {
+        width: 48vw;
+        position: static;
+        transform: none; 
+        margin-bottom: 28.5px;
+    }
+    .mobile {
+        width: 32vw;
+        position: static;
+        transform: none;
+        margin-bottom: 21px;
+    }
+    .arrow {
+        position: absolute;
+        top: 29%;
+    }
+    .devises > svg.arrow:nth-of-type(1) {
+        left: 0;
+    }
+    .devises > svg.arrow:nth-of-type(2) {
+        right: 0;
+    }
+    .details-container {
+        grid-template-columns: none;
+    }
+    .about-project {
+        grid-row: 1 / 2;
+    }
+    .technologies-project {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .role-project {
+        grid-row: 3 / 4;
+    }
+    .website-project {
+        grid-column:  1 / 2;
+        grid-row: 4 / 5;
+    }
+    .github-project {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6 ;
+    }
+    .details-container h4 {
+        font-size: 7vw;
+      
+    }
+ 
+    .details-container a {
+       display: block;
+        font-size: 16.5px;
+    }
+    .footer-copyright {
+        font-size: 12px;
+        padding: 15px 0px;
+     }
+     .button {
+        width: 100%;
+        height: 47px;
+    }
+    .button > a {
+   
+        font-size: 19px;
+        
+    }
+  }
+
+  @media (min-width: 481px) {
+    .project-title {
+        font-size: 43px;
+    }
+    
+    .details-container h4 {
+        font-size: 34px;
+    }
+    .laptop {
+        width: 414px;
+    }
+    .tablet {
+        width: 231px;
+    }
+    .mobile {
+        width: 154px;
+    }
+}
+
+@media (min-width: 641px) {
+    .footer {
+        margin-top: 40px;
+    }
+    .devises {
+        display: flex;
+        justify-content: center;
+    }
+    .laptop {
+        
+        z-index: 1;
+    }
+    .tablet {
+        position: absolute;
+        width: 170px;
+        left: 0;
+        top: 55%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    .mobile {
+        position: absolute;
+        width: 95px;
+        right: 30px; /* Зменште значення, щоб зсунути лівіше */
+        top: 59%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    .details-container h4 {
+        font-size: 30px;
+    }
+    .details-container {
+       
+        column-gap: 30px;
+    }
+    .about-project {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+    .technologies-project {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .role-project {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .website-project {
+        grid-column:  2 / 3;
+        grid-row: 2 / 3;
+    }
+    .github-project {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4 ;
+    }
+    .button {
+        width: initial;
+        padding: 0px 45px;
+        height: 47px;
+   
+    }
+    .button > a {
+        font-size: 19px;
+        
+    }
+}
+
+@media (min-width: 961px) {
+    .project-title {
+      margin-top: 80px;
+    }
+
+}
+
+@media (min-width: 1025px) {
+    .laptop {
+        
+        width: 520px;
+    }
+    .tablet {
+        left: -50px;
+        width: 200px;
+    }
+    .mobile {
+        right: -10px;
+        width: 120px;
+        top: 56%;
+    }
+    .details-container a {
+   
+        font-size: 18px;
+    }
+     .footer-copyright {
+        padding: 20px 0px;
+     }
+}
+
+@media (min-width: 1281px) {
+    .footer {
+        margin-top: 60px;
+    }
+    .devises {
+        max-width: 609px;
+    }
+    .details-container {
+        column-gap: 60px;
+    }
+    .laptop {
+        
+        width: 600px;
+    }
+    .tablet {
+        left: -110px;
+        width: 230px;
+    }
+    .mobile {
+        right: -50px;
+        width: 130px;
+        top: 59%;
+    }
+   
+}

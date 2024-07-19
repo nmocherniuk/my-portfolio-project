@@ -11,10 +11,15 @@ const PaginationContainer = lazy(() => import('./PaginationContainer'));
 const PortfolioSection = () => {
   const descriptionRef = useRef(null);
   const isInViewDescription = useInView(descriptionRef, { once: true });
-  const [rerenderAnimation, setRerenderAnimation] = useState(false);
   const [projects, setProjects] = useState([]);
   const [currentProject, setCurrentProject] = useState(1);
   const [projectPerPage, setProjectPerPage] = useState(1);
+  const indexOfLastProject = currentProject * projectPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectPerPage;
+  const currentProjects = projects.slice(
+    indexOfFirstProject,
+    indexOfLastProject
+  );
 
   useEffect(() => {
     const fetchSkillsData = async () => {
@@ -29,16 +34,8 @@ const PortfolioSection = () => {
     fetchSkillsData();
   }, []);
 
-  const indexOfLastProject = currentProject * projectPerPage;
-  const indexOfFirstProject = indexOfLastProject - projectPerPage;
-  const currentProjects = projects.slice(
-    indexOfFirstProject,
-    indexOfLastProject
-  );
-
   const paginate = (pageNumber) => {
     setCurrentProject(pageNumber);
-    setRerenderAnimation(true);
   };
 
   return (
@@ -53,12 +50,9 @@ const PortfolioSection = () => {
           </SectionDescription>
           <Projects
             key={currentProject}
-            isInViewRef={isInViewDescription}
             projects={currentProjects}
-            animationRepeat={rerenderAnimation}
           />
           <PaginationContainer
-            isInViewRef={isInViewDescription}
             projectperPage={projectPerPage}
             totalProjects={projects.length}
             paginate={paginate}

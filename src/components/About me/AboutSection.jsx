@@ -4,8 +4,8 @@ import classes from './AboutSection.module.css';
 
 const Light = lazy(() => import('../../UI/Light.jsx'));
 const Container = lazy(() => import('../../UI/Container.jsx'));
-const AnimatedHeading = lazy(() => import('../../UI/AnimatedHeading.jsx'));
 const SectionDescription = lazy(() => import('../../UI/SectionDescription.jsx'));
+const AnimatedHeading = lazy(() => import('../../UI/AnimatedHeading.jsx'));
 const PersonalSummary = lazy(() => import('./PersonalSummary.jsx'));
 const Skills = lazy(() => import('./Skills.jsx'));
 

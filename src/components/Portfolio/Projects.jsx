@@ -1,16 +1,18 @@
-import React from "react";
-import classes from "./Projects.module.css";
-import Project from "./Project";
+import React, { Suspense, lazy } from 'react';
+import classes from './Projects.module.css';
 
-function Projects({projects, isInViewRef, animationKey, animationRepeat}) {
+const Project = lazy(() => import('./Project'));
 
+function Projects({ projects }) {
   return (
-    <ul className={classes["projects-container"]}>
-      {projects.map((project, index) => (
-        <Project key={`${animationKey}-${index}`} isInViewRef={isInViewRef} title={project.title} description={project.description} animationRepeat={animationRepeat} />
-      ))}
-    </ul>
+    <Suspense fallback={<div>Loading...</div>}>
+      <ul className={classes['projects-container']}>
+        {projects.map((project, index) => (
+          <Project key={index} title={project.title} description={project.description} />
+        ))}
+      </ul>
+    </Suspense>
   );
-}
+};
 
 export default Projects;

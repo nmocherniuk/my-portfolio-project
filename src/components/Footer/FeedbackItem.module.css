@@ -1,0 +1,49 @@
+.feedback-item {
+    position: relative;
+}
+
+.rectangle {
+    height: 41px;
+    width: 100%;
+}
+
+.feedback-content {
+    padding: 0px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.quotation-mark {
+    display: block;
+    margin-top: 17px;
+}
+
+.customer-photo {
+    position: absolute;
+    right: 18px;
+    top: 16px;
+}
+
+.customer-feedback {
+    font-size: 14px;
+}
+
+.customer {
+    align-self: flex-end;
+    margin-bottom: 16px;
+}
+
+
+@media (min-width:320px) {
+
+    .customer-feedback {
+        font-size: 15px;
+        line-height: 22.5px;
+        font-weight: 300;
+    }
+    .customer {
+        font-weight: 400;
+        font-size: 17px;
+    }
+}
