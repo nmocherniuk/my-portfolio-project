@@ -1,17 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion as m } from 'framer-motion';
-import { useDispatch } from 'react-redux';
-import { setProject } from '../../store/project-slice';
 import laptopImg from '../../assets/laptop.png';
 import classes from './Project.module.css';
 
-const Project = ({ title, description }) => {
-  const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(setProject({ title: title, description: description }));
-  };
+const Project = ({ title, description, projectIndex }) => {
 
   return (
     <li className={classes.project}>
@@ -46,7 +39,7 @@ const Project = ({ title, description }) => {
       >
         <h3 className={classes["project-title"]}>{title}</h3>
         <p className={classes["project-description"]}>{description}</p>
-        <NavLink to="portfolio/details" className={classes.button} onClick={handleClick}>
+        <NavLink to={`${projectIndex}`} className={classes.button}>
           See the details
         </NavLink>
       </m.div>

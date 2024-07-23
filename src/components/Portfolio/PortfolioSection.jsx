@@ -50,6 +50,7 @@ const PortfolioSection = () => {
           </SectionDescription>
           <Projects
             key={currentProject}
+            projectIndex={currentProject}
             projects={currentProjects}
           />
           <PaginationContainer

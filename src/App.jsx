@@ -2,13 +2,14 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/Root";
 import MainPage from "./pages/MainPage";
-import PortfilioPage from "./pages/PortfilioPage";
-
+import PortfilioPage, { projectDetailsLoader } from "./pages/PortfilioPage";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -17,8 +18,9 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'portfolio/details/:projectId',
-        element: <PortfilioPage />
+        path: ':projectId',
+        element: <PortfilioPage />,
+        loader: projectDetailsLoader,
       },
     ],
   },

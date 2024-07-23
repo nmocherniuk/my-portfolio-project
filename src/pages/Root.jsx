@@ -1,33 +1,32 @@
-import { Outlet, useLocation } from "react-router-dom";
-import Header from "../components/Header/Header";
-import { AnimatePresence } from "framer-motion";
-import React, { useRef } from 'react';
-import { useSelector } from "react-redux";
-import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/Footer";
+import React, { lazy, Suspense } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { useSelector } from 'react-redux';
 
+const Header = lazy(() => import('../components/Header/Header'));
+const Navigation = lazy(() => import('../components/Navigation/Navigation'));
 
 function RootLayout() {
-  const location = useLocation()
-  const overlay = useSelector(state => state.navigation.isOpen);
-  function scrollToTop(containerRef) {
-    containerRef.current.scrollTo(0,0)
-  }
+  const location = useLocation();
+  const overlay = useSelector((state) => state.navigation.isOpen);
+
   return (
     <div>
-      <Header  />
-      <AnimatePresence >
-        {overlay && <Navigation />}
+      <Suspense fallback={<div>Loading...</div>}>
+        <Header />
+      </Suspense>
+      <AnimatePresence>
+        {overlay && (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Navigation />
+          </Suspense>
+        )}
       </AnimatePresence>
       <main>
-        <AnimatePresence initial={true} mode="wait">
-              <Outlet location={location} />
+        <AnimatePresence initial={true} mode='wait'>
+          <Outlet location={location} />
         </AnimatePresence>
       </main>
-      {/* { location.pathname === '/' ?
-         <Footer/> : null
-      }
-      */}
     </div>
   );
 }
