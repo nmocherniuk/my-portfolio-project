@@ -4,7 +4,6 @@ import classes from './Projects.module.css';
 const Project = lazy(() => import('./Project'));
 
 function Projects({ projects, projectIndex }) {
-  console.log(projectIndex);
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <ul className={classes['projects-container']}>
