@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { useInView } from 'framer-motion';
+import { db } from '../../data/firebaseConfig.js';
+import { getDocs, collection } from 'firebase/firestore';
 
 const Light = lazy(() => import('../../UI/Light.jsx'));
 const Container = lazy(() => import('../../UI/Container.jsx'));
@@ -24,8 +26,11 @@ const PortfolioSection = () => {
   useEffect(() => {
     const fetchSkillsData = async () => {
       try {
-        const module = await import('../../data/project-data');
-        setProjects(module.default);
+        const data = collection(db, 'projects')
+        const dataSnap = await getDocs(data)
+        const dataList = dataSnap.docs.map(doc => doc.data());
+        console.log(dataList);
+        setProjects(dataList);
       } catch (error) {
         console.error('Error loading skills data:', error);
       }
